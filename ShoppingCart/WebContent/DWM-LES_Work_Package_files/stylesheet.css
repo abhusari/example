@@ -1,0 +1,399 @@
+BODY {
+	BACKGROUND-COLOR: #eeeeee; MARGIN: 0px; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #00348c; FONT-SIZE: 12px
+}
+TABLE.summary {
+	TEXT-ALIGN: center; FONT-SIZE: 12px
+}
+TABLE.entry {
+	FONT-WEIGHT: bold
+}
+TABLE.search {
+	TEXT-ALIGN: center; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #00348c; FONT-SIZE: 11px; FONT-WEIGHT: bold
+}
+TABLE.prefs {
+	TEXT-ALIGN: center; FONT-FAMILY: arial, Helvetica, sans-serif; COLOR: #00348c; FONT-SIZE: 10px; FONT-WEIGHT: normal
+}
+TABLE.LES {
+	BORDER-BOTTOM: #999999 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #999999 1px solid; COLOR: #00348c; FONT-SIZE: 10px
+}
+TABLE.LES TD {
+	BORDER-RIGHT: #999999 1px solid
+}
+TABLE.print {
+	FONT-FAMILY: arial, Helvetica, sans-serif; COLOR: #000000; FONT-SIZE: 11px; FONT-WEIGHT: normal
+}
+H1 {
+	FONT-SIZE: small; FONT-WEIGHT: bold
+}
+A:link {
+	FONT-FAMILY: Arial, Helvetica, san-serif; COLOR: #00348c; FONT-SIZE: 11px; FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+A:visited {
+	FONT-FAMILY: Arial, Helvetica, san-serif; COLOR: #00348c; FONT-SIZE: 11px; FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+A:hover {
+	FONT-FAMILY: Arial, Helvetica, san-serif; COLOR: #e6a104; FONT-SIZE: 11px; FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+A:active {
+	FONT-FAMILY: Arial, Helvetica, san-serif; COLOR: #00348c; FONT-SIZE: 11px; FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+A.reports:link {
+	FONT-SIZE: 10px
+}
+A.reports:visited {
+	FONT-SIZE: 10px
+}
+A.reports:hover {
+	COLOR: #e6a104; FONT-SIZE: 10px
+}
+.summaryheader {
+	BACKGROUND-COLOR: #54427a; HEIGHT: 30px; COLOR: #fdcf64; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.summaryheader2 {
+	TEXT-ALIGN: center; BACKGROUND-COLOR: #54427a; COLOR: #fdcf64; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+A.summaryheader:link {
+	COLOR: #fdcf64
+}
+A.summaryheader:visited {
+	COLOR: #fdcf64
+}
+A.summaryheader:hover {
+	COLOR: #fdcf64
+}
+A.sorting:link {
+	COLOR: #fdcf64; FONT-SIZE: 10px
+}
+A.sorting:visited {
+	COLOR: #fdcf64; FONT-SIZE: 10px
+}
+A.sorting:hover {
+	COLOR: #ffffff; FONT-SIZE: 10px
+}
+A.sorting:active {
+	COLOR: #fdcf64; FONT-SIZE: 10px
+}
+.sorting {
+	COLOR: #fdcf64; FONT-SIZE: 10px
+}
+A.topbar:link {
+	COLOR: #00348c; FONT-SIZE: 11px; FONT-WEIGHT: bold
+}
+A.topbar:visited {
+	COLOR: #00348c; FONT-SIZE: 11px; FONT-WEIGHT: bold
+}
+A.topbar:hover {
+	COLOR: #ffffff; FONT-SIZE: 11px; FONT-WEIGHT: bold
+}
+A.menuhorizontal2:link {
+	COLOR: #00348c; FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+A.menuhorizontal2:visited {
+	COLOR: #e6a104; FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+A.menuhorizontal2:hover {
+	COLOR: #e6a104; FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+A.menuhorizontal2:active {
+	COLOR: #e6a104; FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+A.counts:link {
+	FONT-FAMILY: Arial,Helvetica,sans-serif; COLOR: #00348c; FONT-SIZE: 10px; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+A.counts:visited {
+	FONT-FAMILY: Arial,Helvetica,sans-serif; COLOR: #00348c; FONT-SIZE: 10px; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+A.counts:hover {
+	FONT-FAMILY: Arial,Helvetica,sans-serif; COLOR: #e6a104; FONT-SIZE: 10px; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+A.counts:active {
+	FONT-FAMILY: Arial,Helvetica,sans-serif; COLOR: #e6a104; FONT-SIZE: 10px; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+A.countsP:link {
+	TEXT-ALIGN: left; FONT-FAMILY: Arial,Helvetica,sans-serif; COLOR: #000000; FONT-SIZE: 10px; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+A.countsP:visited {
+	TEXT-ALIGN: left; FONT-FAMILY: Arial,Helvetica,sans-serif; COLOR: #000000; FONT-SIZE: 10px; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+A.countsP:hover {
+	TEXT-ALIGN: left; FONT-FAMILY: Arial,Helvetica,sans-serif; COLOR: #000000; FONT-SIZE: 10px; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+A.countsP:active {
+	TEXT-ALIGN: left; FONT-FAMILY: Arial,Helvetica,sans-serif; COLOR: #000000; FONT-SIZE: 10px; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+A.table:link {
+	COLOR: #00348c; FONT-SIZE: 10px; FONT-WEIGHT: bold
+}
+A.table:visited {
+	COLOR: #00348c; FONT-SIZE: 10px; FONT-WEIGHT: bold
+}
+A.table:hover {
+	COLOR: #00348c; FONT-SIZE: 10px; FONT-WEIGHT: bold
+}
+A.tabs:link {
+	COLOR: #000000; FONT-SIZE: 10px; TEXT-DECORATION: none
+}
+A.tabs:visited {
+	COLOR: #000000; FONT-SIZE: 10px; TEXT-DECORATION: none
+}
+A.tabs:hover {
+	COLOR: #000000; FONT-SIZE: 10px; FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+.alarm {
+	COLOR: #ff0000
+}
+A.alarm:link {
+	COLOR: #ff0000; TEXT-DECORATION: underline
+}
+A.alarm:visited {
+	COLOR: #ff0000; TEXT-DECORATION: underline
+}
+A.alarm:hover {
+	COLOR: #5e0000; TEXT-DECORATION: underline
+}
+A.alarm:active {
+	COLOR: #ff0000; TEXT-DECORATION: underline
+}
+.paging {
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif; COLOR: #666666; FONT-SIZE: 10px; FONT-WEIGHT: normal
+}
+A.paging:link {
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif; COLOR: #00348c; FONT-SIZE: 10px; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+A.paging:visited {
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif; COLOR: #00348c; FONT-SIZE: 10px; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+A.paging:hover {
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif; COLOR: #fdcf64; FONT-SIZE: 10px; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+A.paging:active {
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif; COLOR: #fdcf64; FONT-SIZE: 10px; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+.breadcrumbs {
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif; COLOR: #666666; FONT-SIZE: 10px; FONT-WEIGHT: normal
+}
+A.breadcrumbs:link {
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif; COLOR: #666666; FONT-SIZE: 10px; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+A.breadcrumbs:visited {
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif; COLOR: #666666; FONT-SIZE: 10px; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+A.breadcrumbs:hover {
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif; COLOR: #000000; FONT-SIZE: 10px; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+A.breadcrumbs:active {
+	FONT-FAMILY: Verdana,Arial,Helvetica,sans-serif; COLOR: #666666; FONT-SIZE: 10px; FONT-WEIGHT: normal; TEXT-DECORATION: underline
+}
+A.headerlink:link {
+	FONT-FAMILY: Geneva, Arial, Helvetica, san-serif; COLOR: #00348c; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+A.headerlink:visited {
+	FONT-FAMILY: Geneva, Arial, Helvetica, san-serif; COLOR: #00348c; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.graybar {
+	BACKGROUND-COLOR: #d6d6d6; HEIGHT: 20px
+}
+.whitebar {
+	BACKGROUND-COLOR: #ffffff; HEIGHT: 20px
+}
+.graybar2 {
+	BACKGROUND-COLOR: #d6d6d6
+}
+.whitebar2 {
+	BACKGROUND-COLOR: #ffffff
+}
+INPUT.btn {
+	BORDER-BOTTOM: outset; BORDER-LEFT: outset; BACKGROUND-COLOR: #e8e8e8; WIDTH: 65px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; HEIGHT: 30px; COLOR: #00348c; FONT-SIZE: 14px; BORDER-TOP: outset; BORDER-RIGHT: outset
+}
+INPUT.btnSmall {
+	BORDER-BOTTOM-STYLE: outset; BACKGROUND-COLOR: #e8e8e8; BORDER-LEFT-STYLE: outset; WIDTH: 60px; FONT-FAMILY: Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: outset; HEIGHT: 25px; COLOR: #00348c; BORDER-RIGHT-STYLE: outset; FONT-SIZE: 11px; FONT-WEIGHT: bold
+}
+INPUT.btnSmallText {
+	BORDER-BOTTOM-STYLE: outset; BACKGROUND-COLOR: #cccccc; BORDER-LEFT-STYLE: outset; WIDTH: 60px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: outset; HEIGHT: 20px; COLOR: #00348c; BORDER-RIGHT-STYLE: outset; FONT-SIZE: 10px; FONT-WEIGHT: normal
+}
+INPUT.btnSmallSub {
+	BORDER-BOTTOM-STYLE: outset; BACKGROUND-COLOR: #e8e8e8; BORDER-LEFT-STYLE: outset; WIDTH: 60px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: outset; HEIGHT: 25px; COLOR: #54427a; BORDER-RIGHT-STYLE: outset; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+INPUT.btnSmallBlue {
+	BORDER-BOTTOM-STYLE: outset; BACKGROUND-COLOR: #e8e8e8; BORDER-LEFT-STYLE: outset; WIDTH: 60px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: outset; HEIGHT: 25px; COLOR: #54427a; BORDER-RIGHT-STYLE: outset; FONT-SIZE: 12px
+}
+INPUT.btnBold {
+	BORDER-BOTTOM: outset; BORDER-LEFT: outset; BACKGROUND-COLOR: #e8e8e8; WIDTH: 40px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; HEIGHT: 30px; COLOR: #54427a; FONT-SIZE: 14px; BORDER-TOP: outset; FONT-WEIGHT: bold; BORDER-RIGHT: outset
+}
+INPUT.btnBigBold {
+	BORDER-BOTTOM: outset; BORDER-LEFT: outset; BACKGROUND-COLOR: #e8e8e8; WIDTH: 80px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; HEIGHT: 35px; COLOR: #54427a; FONT-SIZE: 16px; BORDER-TOP: outset; FONT-WEIGHT: bold; BORDER-RIGHT: outset
+}
+INPUT.btnBig {
+	BORDER-BOTTOM: outset; BORDER-LEFT: outset; BACKGROUND-COLOR: #e8e8e8; WIDTH: 140px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; HEIGHT: 30px; COLOR: #54427a; FONT-SIZE: 14px; BORDER-TOP: outset; BORDER-RIGHT: outset
+}
+INPUT.btn160 {
+	BORDER-BOTTOM-STYLE: outset; BACKGROUND-COLOR: #e8e8e8; BORDER-LEFT-STYLE: outset; WIDTH: 180px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: outset; HEIGHT: 25px; COLOR: #54427a; BORDER-RIGHT-STYLE: outset; FONT-SIZE: 12px
+}
+INPUT.btn120 {
+	BORDER-BOTTOM-STYLE: outset; BACKGROUND-COLOR: #e8e8e8; BORDER-LEFT-STYLE: outset; WIDTH: 100px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: outset; HEIGHT: 25px; COLOR: #00348c; BORDER-RIGHT-STYLE: outset; FONT-SIZE: 11px
+}
+INPUT.btn140 {
+	BORDER-BOTTOM-STYLE: outset; BACKGROUND-COLOR: #e8e8e8; BORDER-LEFT-STYLE: outset; WIDTH: 120px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: outset; HEIGHT: 25px; COLOR: #00348c; BORDER-RIGHT-STYLE: outset; FONT-SIZE: 10px
+}
+INPUT.btnGo {
+	BORDER-BOTTOM-STYLE: outset; BACKGROUND-COLOR: #e8e8e8; BORDER-LEFT-STYLE: outset; WIDTH: 35px; FONT-FAMILY: Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: outset; HEIGHT: 20px; COLOR: #00348c; BORDER-RIGHT-STYLE: outset; FONT-SIZE: 10px
+}
+INPUT.btnSmallNoBold {
+	BORDER-BOTTOM-STYLE: outset; BACKGROUND-COLOR: #e8e8e8; BORDER-LEFT-STYLE: outset; WIDTH: 60px; FONT-FAMILY: Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: outset; HEIGHT: 25px; COLOR: #00348c; BORDER-RIGHT-STYLE: outset; FONT-SIZE: 11px
+}
+INPUT.btn100 {
+	BORDER-BOTTOM-STYLE: outset; BACKGROUND-COLOR: #e8e8e8; BORDER-LEFT-STYLE: outset; WIDTH: 90px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: outset; HEIGHT: 25px; COLOR: #54427a; BORDER-RIGHT-STYLE: outset; FONT-SIZE: 12px
+}
+INPUT.btn45 {
+	BORDER-BOTTOM-STYLE: outset; BACKGROUND-COLOR: #e8e8e8; BORDER-LEFT-STYLE: outset; WIDTH: 45px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: outset; HEIGHT: 20px; COLOR: #00348c; BORDER-RIGHT-STYLE: outset; FONT-SIZE: 10px
+}
+INPUT.btn65 {
+	BORDER-BOTTOM-STYLE: outset; BACKGROUND-COLOR: #e8e8e8; BORDER-LEFT-STYLE: outset; WIDTH: 65px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: outset; HEIGHT: 25px; COLOR: #54427a; BORDER-RIGHT-STYLE: outset; FONT-SIZE: 10px
+}
+INPUT.btn75 {
+	BORDER-BOTTOM-STYLE: outset; BACKGROUND-COLOR: #e8e8e8; BORDER-LEFT-STYLE: outset; WIDTH: 75px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: outset; HEIGHT: 25px; COLOR: #54427a; BORDER-RIGHT-STYLE: outset; FONT-SIZE: 10px
+}
+INPUT.btn60 {
+	BORDER-BOTTOM-STYLE: outset; BACKGROUND-COLOR: #e8e8e8; BORDER-LEFT-STYLE: outset; WIDTH: 60px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: outset; HEIGHT: 25px; COLOR: #54427a; BORDER-RIGHT-STYLE: outset; FONT-SIZE: 10px
+}
+INPUT.btn80 {
+	BORDER-BOTTOM-STYLE: outset; BACKGROUND-COLOR: #e8e8e8; BORDER-LEFT-STYLE: outset; WIDTH: 80px; FONT-FAMILY: Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: outset; HEIGHT: 25px; COLOR: #00348c; BORDER-RIGHT-STYLE: outset; FONT-SIZE: 12px
+}
+INPUT.btn80A {
+	BORDER-BOTTOM-STYLE: outset; BACKGROUND-COLOR: #e8e8e8; BORDER-LEFT-STYLE: outset; WIDTH: 80px; FONT-FAMILY: Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: outset; HEIGHT: 25px; COLOR: #00348c; BORDER-RIGHT-STYLE: outset; FONT-SIZE: 10px
+}
+INPUT.btn110 {
+	BORDER-BOTTOM-STYLE: outset; BACKGROUND-COLOR: #e8e8e8; BORDER-LEFT-STYLE: outset; WIDTH: 95px; FONT-FAMILY: Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: outset; HEIGHT: 26px; COLOR: #00348c; BORDER-RIGHT-STYLE: outset; FONT-SIZE: 12px
+}
+INPUT.btn80B {
+	BORDER-BOTTOM-STYLE: outset; BACKGROUND-COLOR: #e8e8e8; BORDER-LEFT-STYLE: outset; WIDTH: 80px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: outset; HEIGHT: 25px; COLOR: #00348c; BORDER-RIGHT-STYLE: outset; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+INPUT.btnCreate {
+	BORDER-BOTTOM-STYLE: outset; BACKGROUND-COLOR: #e8e8e8; BORDER-LEFT-STYLE: outset; WIDTH: 100px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: outset; HEIGHT: 20px; COLOR: #00348c; BORDER-RIGHT-STYLE: outset; FONT-SIZE: 10px
+}
+INPUT.btnhov {
+	BACKGROUND-IMAGE: url(button4.gif); BORDER-BOTTOM-COLOR: #e6a104; BACKGROUND-COLOR: #e8e8e8; BORDER-TOP-COLOR: #fdcf64; BORDER-RIGHT-COLOR: #e6a104; BORDER-LEFT-COLOR: #fdcf64
+}
+INPUT.btndown {
+	BACKGROUND-IMAGE: url(button4.gif); BORDER-BOTTOM-STYLE: inset; BACKGROUND-COLOR: #b0b0b0; BORDER-LEFT-STYLE: inset; BORDER-TOP-STYLE: inset; BORDER-RIGHT-STYLE: inset
+}
+.width {
+	WIDTH: 130px; WHITE-SPACE: nowrap; OVERFLOW: auto
+}
+.bigtext {
+	FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; COLOR: #54427a; FONT-SIZE: 22px
+}
+.smalltext {
+	BORDER-BOTTOM-STYLE: none; TEXT-ALIGN: right; BACKGROUND-COLOR: #eeeeee; BORDER-LEFT-STYLE: none; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: none; COLOR: #00348c; BORDER-RIGHT-STYLE: none; FONT-SIZE: 10px
+}
+.smalltext2 {
+	BORDER-BOTTOM-STYLE: none; TEXT-ALIGN: left; BORDER-LEFT-STYLE: none; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: none; COLOR: #00348c; BORDER-RIGHT-STYLE: none; FONT-SIZE: 11px
+}
+.smalltext3 {
+	BORDER-BOTTOM: #8696b0 1px solid; TEXT-ALIGN: left; BORDER-LEFT: #8696b0 1px solid; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; COLOR: #00348c; FONT-SIZE: 10px; BORDER-TOP: #8696b0 1px solid; BORDER-RIGHT: #8696b0 1px solid
+}
+.smalltext4 {
+	BORDER-BOTTOM: #8696b0 1px solid; TEXT-ALIGN: left; BORDER-LEFT: #8696b0 1px solid; WIDTH: 120px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; COLOR: #00348c; FONT-SIZE: 10px; BORDER-TOP: #8696b0 1px solid; BORDER-RIGHT: #8696b0 1px solid
+}
+.smalltextPrint {
+	BORDER-BOTTOM: #000000 1px solid; TEXT-ALIGN: left; BORDER-LEFT: #000000 1px solid; FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #000000; FONT-SIZE: 10px; BORDER-TOP: #000000 1px solid; BORDER-RIGHT: #000000 1px solid
+}
+DIV#iehack {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; HEIGHT: 280px; OVERFLOW: auto; PADDING-TOP: 0px
+}
+.clearing {
+	CLEAR: both
+}
+.dot {
+	FONT-FAMILY: Verdana,Arial,Helvetica, sans-serif; COLOR: #7e437a; FONT-SIZE: 10px; FONT-WEIGHT: bold
+}
+.bullet {
+	FONT-FAMILY: Verdana,Arial,Helvetica, sans-serif; COLOR: #e6a104; FONT-SIZE: 10px; FONT-WEIGHT: bold
+}
+.tabs {
+	MARGIN-TOP: 3px
+}
+.UserName {
+	COLOR: #000000; FONT-WEIGHT: bold
+}
+.style6 {
+	FONT-SIZE: 16px
+}
+.redAlarm {
+	COLOR: #ff0000
+}
+.dot2 {
+	FONT-FAMILY: Verdana,Arial,Helvetica, sans-serif; COLOR: #ffffff; FONT-SIZE: 10px; FONT-WEIGHT: bold
+}
+.count {
+	DISPLAY: none
+}
+.summary {
+	DISPLAY: block
+}
+.summary1 {
+	DISPLAY: block
+}
+.sideborder {
+	BORDER-LEFT: #666666 1px solid
+}
+.copyright {
+	COLOR: #54427a; FONT-SIZE: 12px
+}
+.copyright2 {
+	COLOR: #00348c; FONT-SIZE: 12px
+}
+.pageTitle18 {
+	COLOR: #00348c; FONT-SIZE: 18px; FONT-WEIGHT: bold
+}
+.pageTitle16 {
+	COLOR: #00348c; FONT-SIZE: 16px; FONT-WEIGHT: bold
+}
+.inputboxes {
+	COLOR: 
+}
+.remarks {
+	FONT-FAMILY: Geneva, Arial, Helvetica, san-serif; COLOR: ; FONT-SIZE: 11px; FONT-WEIGHT: normal
+}
+TR.purplebar {
+	BACKGROUND-IMAGE: url(purplebar1.gif); COLOR: #fdcf64; FONT-SIZE: 11px; FONT-WEIGHT: bold
+}
+.headerborder {
+	BACKGROUND-IMAGE: url(yellow_spacer.gif); BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: right 50%; COLOR: #fdcf64; FONT-WEIGHT: bold
+}
+.scrollbars {
+	SCROLLBAR-ARROW-COLOR: #333333; BORDER-BOTTOM: #666666 1px solid; BORDER-LEFT: #666666 1px solid; BACKGROUND-COLOR: #fafafa; SCROLLBAR-BASE-COLOR: #dadada; BORDER-TOP: #666666 1px solid; BORDER-RIGHT: #666666 1px solid
+}
+#details {
+	OVERFLOW: scroll
+}
+.100 {
+	WIDTH: 100px
+}
+.heading {
+	COLOR: #fdcf64; FONT-SIZE: 16px; FONT-WEIGHT: bold
+}
+.smallFont {
+	FONT-SIZE: 10px
+}
+.detailType {
+	TEXT-ALIGN: left; WIDTH: 90px; HEIGHT: 25px
+}
+.detailCount {
+	TEXT-ALIGN: left; WIDTH: 20px; HEIGHT: 25px
+}
+.barCounts {
+	FONT-FAMILY: Verdana,Arial,Helvetica, sans-serif; HEIGHT: 25px; COLOR: #e6a104; FONT-SIZE: 10px; FONT-WEIGHT: bold
+}
+.grayText {
+	COLOR: #666666; FONT-SIZE: 11px
+}
+.top {
+	VERTICAL-ALIGN: super
+}
+.dot {
+	FONT-FAMILY: Verdana,Arial,Helvetica, sans-serif; COLOR: #666666; FONT-SIZE: 10px; VERTICAL-ALIGN: super; FONT-WEIGHT: bold
+}
+.printFont {
+	COLOR: #000000; FONT-SIZE: 10px
+}

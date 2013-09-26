@@ -1,0 +1,1911 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<TITLE>DWM - Expense Rehab Work Package</TITLE>
+<META content=IE=7 http-equiv=X-UA-Compatible>
+<META content="text/html; charset=iso-8859-1" http-equiv=Content-Type>
+<LINK rel=stylesheet type=text/css
+	href="DWM-LES_Work_Package_files/stylesheet.css" media=screen>
+<LINK rel=stylesheet type=text/css
+	href="DWM-LES_Work_Package_files/stylesheet_print.css" media=print>
+<link rel=stylesheet type=text/css
+	href="DWM-LES_Work_Package_files/jquery.ui.all.css">
+<script src="DWM-LES_Work_Package_files/jquery-1.7.1.js"></script>
+<script src="DWM-LES_Work_Package_files/jquery.ui.widget.js"></script>
+<script src="DWM-LES_Work_Package_files/jquery.ui.accordion.js"></script>
+<SCRIPT language=JavaScript type="text/JavaScript">
+	function popUp(URL) {
+		day = new Date();
+		id = day.getTime();
+		eval("page"
+				+ id
+				+ " = window.open(URL, '"
+				+ id
+				+ "', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=300,height=200,left = 250,top = 150');");
+	}
+	$(function() {
+		$("#accordion").accordion({
+			collapsible : true
+		});
+	});
+	function onClick(url) {
+		document.location.href = url;
+	}
+
+	//function for Cancel btn onclick event
+	function goToSearch() {
+		document.forms[0].action = "LES-Work_Package_Search.htm";
+		document.forms[0].method = "post";
+		document.forms[0].submit;
+	}
+
+	//function for Temp btn onclick event
+	function goToTemp() {
+		document.location.href = "TempBypassCables.htm";
+	}
+
+	function codePopUp(url) {
+		window
+				.open(
+						'http://129.196.218.60:8080/dwm' + url,
+						'',
+						'scrollbars=yes,toolbar=yes,location=no,directories=no,status=yes,menubar=no,width=500,height=600,resizable=no');
+	}
+
+	function printPopUp(wkpkgKey, userId) {
+		window
+				.open(
+						'http://129.196.218.60:8080/dwm2/lesWkpkgPrintEmailAction.do?wkpkgKey='
+								+ wkpkgKey + '&userid=' + userId,
+						'',
+						'scrollbars=yes,toolbar=yes,location=no,directories=no,status=yes,menubar=yes,width=1024,height=800,resizable=yes');
+	}
+	function codeForPopUp(url) {
+		window
+				.open(
+						'http://129.196.218.60:8080/dwm2' + url,
+						'',
+						'scrollbars=yes,toolbar=yes,location=no,directories=no,status=yes,menubar=no,width=800,height=600,resizable=yes');
+	}
+	function show(obj1, obj2, obj3, obj4, obj5, obj6, obj7) {
+		hide_tabs();
+		document.getElementById(obj1).style.display = '';
+		document.getElementById(obj2).style.display = 'none';
+		document.getElementById(obj3).style.display = '';
+		document.getElementById(obj4).style.display = 'none';
+		document.getElementById(obj5).style.display = 'none';
+		document.getElementById(obj6).style.display = 'none';
+		document.getElementById(obj7).style.display = 'none';
+	}
+
+	function hide_tabs() {
+		document.getElementById('show1').style.display = 'none';
+		document.getElementById('show2').style.display = 'none';
+		document.getElementById('show3').style.display = 'none';
+		document.getElementById('show4').style.display = 'none';
+		document.getElementById('show5').style.display = 'none';
+		document.getElementById('hide1').style.display = '';
+		document.getElementById('hide2').style.display = '';
+		document.getElementById('hide3').style.display = '';
+		document.getElementById('hide4').style.display = '';
+		document.getElementById('hide5').style.display = '';
+	}
+	function show_ppr(show, hide) {
+		document.getElementById(show).style.display = 'block';
+		document.getElementById(hide).style.display = 'none';
+	}
+
+	function goTools(toolName) {
+		//alert(toolName);
+		if (toolName == "MLT Test") {
+			document.forms[0].action = "DWM_LES_MLT_Test.htm";
+			document.forms[0].method = "post";
+			document.forms[0].submit;
+		} else if (toolName == "Clear Defective Pairs in LFACS") {
+			//document.getElementById("pageParam").value="3";
+			//document.forms[0].action="pprdefdetailwizard.htm";
+			//document.forms[0].submit;
+		} else if (toolName == "Work Mgr Close Out") {
+			//if(document.forms[0].wkpkg.cttn.value == "" ||
+			//   document.forms[0].wkpkg.cttn.value ==null ) {
+			//	alert("Need a CTTN t
+			//}
+			//document.forms[0].action="LES_wp_closeout.htm";
+			document.getElementById("pageParam").value = "5";
+			//document.forms[0].submit;
+		} else if (toolName == "Trob Entry Req") {
+			//var jobtype = document.getElementById("jobType").value;
+			var jobtype = document.getElementById("selectedJobType").value;
+			var re = /^[a-zA-Z0-9]+$/i;
+			var isValidJobType = re.test(jobtype);
+			var flag = true;
+			if (jobtype.length < 1) {
+				alert("The Job Type field is required.");
+				flag = false;
+				return false;
+			} else if (!isValidJobType) {
+				alert("The Job Type field is alphaNumeric.");
+				flag = false;
+				return false;
+			} else if (flag) {
+				document.forms[0].action = "LES_wp_trouble_Req_entry.htm?jobtype="
+						+ jobtype;
+				//document.forms[0].submit;
+			}
+		} else if (toolName == "Pair Status Report") {
+			document.forms[0].action = "DWM-LESPairStatusReport.htm";
+			document.forms[0].method = "post";
+			document.forms[0].submit;
+		} else if (toolName == "WFA Group") {
+			document.forms[0].action = "Create_WFA_Tkt.html";
+			document.forms[0].method = "post";
+			document.forms[0].submit;
+		} else {
+			document.forms[0].method = "post";
+		}
+
+	}
+
+	function openGroupIdWindow() {
+		window
+				.open(
+						'Expense_Rehab_Work_Package_Group_IDs.htm',
+						'',
+						'scrollbars=yes,toolbar=yes,location=no,directories=no,status=yes,menubar=no,width=550,height=400,resizable=no');
+	}
+
+	//added correct error message for bug id 4702
+	function submitGo(key) {
+		var re1 = /^[0-9]+$/i;
+		var txtValue = key.value;
+		var OK = re1.test(txtValue);
+		var flag = true;
+		if (txtValue != null) {
+			if (txtValue.length < 1) {
+				alert("The Wkpkg Num field is required.");
+				flag = false;
+				return false;
+			} else if (!OK) {
+				alert("The Wkpkg Num field is a number.");
+				flag = false;
+				return false;
+
+			} else if (flag) {
+				//document.forms[0].action = "doRehabWkpkgFindByPrimaryKeyAction.do";
+				//document.forms[0].method = "POST";
+				//document.forms[0].submit();
+				return true;
+			}
+			return false;
+		}
+	}
+	// change code for bug 4385
+	function changeVal() {
+		// added for bug 4774
+		var wpredirect = 'null';
+		if (wpredirect != 'null') {
+
+			//document.forms[0].action="LES_wp_closeout.htm";
+			window.location = "/dwm/LES_wp_closeout.htm";
+			//document.forms[0].submit;
+		} else {
+			// end bug 4774
+			var outsideId = document.forms[0].outsideUserId.value;
+			var insideId = document.forms[0].insideUserId.value;
+			if (outsideId != null || outsideId.length > 1 || outsideId != "") {
+				document.getElementById("display_outsideTechName").value = document
+						.getElementById("outsideTechName").value;
+			}
+			if (insideId != null || insideId.length > 1 || insideId != "") {
+				document.getElementById("display_insideTechName").value = document
+						.getElementById("insideTechName").value;
+			}
+
+			MM_preloadImages('assets/lookup_over.gif', 'assets/AP4SA_over.gif',
+					'assets/IRTH_over.gif');
+		}
+	}
+	// added code for bug 4385 
+	function validateDelete(id) {
+
+		var outsideId = id.value;
+		if (outsideId == null || outsideId.length < 1 || outsideId == "") {
+
+			document.getElementById("outsideTechName").value = "";
+			document.getElementById("display_outsideTechName").value = "";
+		}
+
+	}
+	// added code for bug 4385 
+	function validateDelete1(id) {
+
+		var insideId = id.value;
+		if (insideId == null || insideId.length < 1 || insideId == "") {
+
+			document.getElementById("insideTechName").value = "";
+			document.getElementById("display_insideTechName").value = "";
+		}
+
+	}
+	function validateForm() {
+		var expWeight = document.forms[0].expsysWght.value;
+		var totalWorkHours = document.forms[0].totalWorkHours.value;
+		var startDate = document.forms[0].startDate.value;
+		var closeDate = document.forms[0].closeDate.value;
+		var createDate = document.forms[0].createDate.value;
+		var referToEngDate = document.forms[0].referToEngDate.value;
+		var returnFrEngDate = document.forms[0].returnFrEngDate.value;
+		var validStartDate = true;// added for bug 4848
+		var validCloseDate = true;// added for bug 4848
+
+		//validation for Post tracking selection
+		var postTracking = document.getElementById("postTrack");
+		var flagStatus = false;
+		for ( var i = 0; i < postTracking.length; i++) {
+			if (postTracking.options[i].selected == true) {
+				if (postTracking.options[i].value == "-1") {
+					flagStatus = true;
+				}
+			}
+		}
+		if (flagStatus) {
+			alert("Please select an option for Post Tracking.");
+			//return false;
+		} else {
+			//document.forms[0].action = "";		      
+			//ocument.forms[0].method = "POST";
+			//document.forms[0].submit();		
+		}
+
+		////////////////////////////////////////
+
+		if (document.getElementById('contractCostId') != null) {
+			var contractCost = document.forms[0].contractCost.value;
+		}
+		if (document.getElementById('wkpkgContractCostId') != null) {
+			var contractCost = document.getElementById('wkpkgContractCostId').value;
+		}
+		var alertMsg = "Please correct the following fields:\n";
+		var flag = true;
+
+		if (expWeight == null || trim(expWeight).length < 1) {
+			alertMsg = alertMsg
+					+ "Please enter a valid whole number between 0-9999 for Expert Weight.\n";
+			flag = false;
+		} else if (isNaN(expWeight)) {
+			alertMsg = alertMsg
+					+ "Please enter a valid whole number between 0-9999 for Expert Weight.\n";
+			flag = false;
+		} else if (expWeight >= 10000 || expWeight < 0) {
+			alertMsg = alertMsg
+					+ "Please enter a valid whole number between 0-9999 for Expert Weight.\n";
+			flag = false;
+		} else if (expWeight.indexOf('.') > -1) {
+			alertMsg = alertMsg
+					+ "Please enter a valid whole number between 0-9999 for Expert Weight.\n";
+			flag = false;
+		}
+
+		if (isNaN(totalWorkHours)) {
+			alertMsg = alertMsg + "Total Work Hours is number.\n";
+			flag = false;
+		} else if (totalWorkHours >= 1000 || totalWorkHours < 0) {
+			alertMsg = alertMsg + "Total Work Hours is between 0 and 999.99!\n";
+			flag = false;
+		}
+
+		if (contractCost != null && trim(contractCost).length > 1) {
+			if (isNaN(contractCost)) {
+				alertMsg = alertMsg + "Contract Cost is number.\n";
+				flag = false;
+			} else if (contractCost >= 100000000 || contractCost < 0) {
+				alertMsg = alertMsg
+						+ "The Contractor Cost must be a number between 0 and 99,999,999.99.!\n";
+				flag = false;
+			}
+		}
+		if (startDate != null && trim(startDate).length > 1) {
+			if (!isValidDate(document.forms[0].startDate)) {
+				alertMsg = alertMsg
+						+ "The Start Date must be in the following format 'YYYY-MM-DD'.\n";
+				flag = false;
+				validStartDate = false;// added for bug 4848
+			}
+		}
+
+		if (closeDate != null && trim(closeDate).length > 1) {
+			if (startDate == null || trim(startDate).length < 1) {
+				alertMsg = alertMsg
+						+ "Start Date is required in order to input close date. Input Date format is YYYY-MM-DD.\n";
+				flag = false;
+			}
+			if (!isValidDate(document.forms[0].closeDate)) {
+				alertMsg = alertMsg
+						+ "The Closed Date must be in the following format 'YYYY-MM-DD'.\n";
+				flag = false;
+				validCloseDate = false; // added for bug 4848
+			}
+		}
+		if (referToEngDate != null && trim(referToEngDate).length > 1) {
+			if (!isValidDate(document.forms[0].referToEngDate)) {
+				alertMsg = alertMsg
+						+ "The Engineering Referred Date must be in the following format 'YYYY-MM-DD'.\n";
+				flag = false;
+			}
+		}
+		if (returnFrEngDate != null && trim(returnFrEngDate).length > 1) {
+			if (!isValidDate(document.forms[0].returnFrEngDate)) {
+				alertMsg = alertMsg + "Returned Date format is YYYY-MM-DD.\n";
+				flag = false;
+			}
+		}
+		if (((createDate != null && startDate != null) && trim(startDate).length > 1)
+				&& validStartDate) {// changed for bug 4848
+			if (!compare(document.forms[0].createDate,
+					document.forms[0].startDate)) {
+				alertMsg = alertMsg
+						+ "Start Date must be greater than or equal to Create Date.\n";
+				flag = false;
+			}
+		}
+		if ((createDate != null && startDate != null && closeDate != null)
+				&& trim(startDate).length > 1 && trim(closeDate).length > 1
+				&& validCloseDate && validStartDate) { // changed for bug 4848
+			if (!compare(document.forms[0].createDate,
+					document.forms[0].closeDate)
+					|| !compare(document.forms[0].startDate,
+							document.forms[0].closeDate)) {
+				alertMsg = alertMsg
+						+ "The Closed Date must be greater than or equal to the Start Date.\n";
+				flag = false;
+			}
+		}
+		if (!flag) {
+			alert(alertMsg);
+			return false;
+		}
+
+	}
+
+	function isValidDate(key) {
+
+		var days = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+		var year;
+		var month;
+		var day;
+		var date_parts = null;
+		var rtrn = true;
+		var date_string = key.value;
+		var flag = true;
+		// changed for bug 4848
+		if (date_string.match(/^(\d{4})[-](\d{1,2})[-](\d{1,2})$/)) {
+			date_parts = date_string.match(/^(\d{4})[-](\d{1,2})[-](\d{1,2})$/);
+			// end
+
+			if (date_parts) {
+
+				year = date_parts[1];
+
+				month = date_parts[2];
+
+				day = date_parts[3];
+
+			}
+
+			if (date_parts) {
+				if (1 <= month && month <= 12) {
+					if (month == 2) {
+
+						if (year % 4 != 0 ? false : (year % 100 != 0 ? true
+								: (year % 1000 != 0 ? false : true))) {
+
+							rtrn = (1 <= day && day <= 29);
+							if (!rtrn) {
+								rtrn = false;
+
+							}
+						} else {
+							rtrn = (1 <= day && day <= 28);
+							if (!rtrn) {
+								rtrn = false;
+
+							}
+						}
+					} else {
+						rtrn = (1 <= day && day <= days[month - 1]);
+						if (!rtrn) {
+							rtrn = false;
+
+						}
+					}
+				} else {
+
+					rtrn = false;
+				}
+			} else {
+
+				rtrn = false;
+			}
+		} else {
+
+			rtrn = false;
+		}
+
+		return rtrn;
+	}//end of isValidDate
+
+	function compare(key1, key2) {
+		var flag = true;
+		var date_array1 = key1.value.split('-');
+		var day1 = date_array1[2];
+
+		// Attention! Javascript consider months in the range 0 - 11
+		var month1 = date_array1[1];
+		var year1 = date_array1[0];
+		var compare_date1 = month1 + '-' + day1 + '-' + year1;
+
+		var date_array2 = key2.value.split('-');
+		var day2 = date_array2[2];
+
+		// Attention! Javascript consider months in the range 0 - 11
+		var month2 = date_array2[1];
+		var year2 = date_array2[0];
+		var compare_date2 = month2 + '-' + day2 + '-' + year2;
+
+		if (Date.parse(compare_date1) > Date.parse(compare_date2)) {
+			//alert( "Start Date must be greater than or equal to Create Date.\n");
+			flag = false;
+		}
+		return flag;
+	}
+
+	function trim(s) {
+		return rtrim(ltrim(s));
+	}
+
+	function ltrim(s) {
+		var l = 0;
+		if (s != null) {
+			while (l < s.length && s[l] == ' ') {
+				l++;
+			}
+			return s.substring(l, s.length);
+		}
+
+	}
+
+	function rtrim(s) {
+		if (s != null) {
+			var r = s.length - 1;
+			while (r > 0 && s[r] == ' ') {
+				r -= 1;
+			}
+			return s.substring(0, r + 1);
+		}
+	}
+
+	function techOnChange() {
+		var techs = document.getElementById("techs").value;
+		if (techs == "Tech-2") {
+			document.getElementById("helperId").value = "tech2";
+		} else if (techs == "Tech-3") {
+			document.getElementById("helperId").value = "tech3";
+		} else if (techs == "Tech-4") {
+			document.getElementById("helperId").value = "tech4";
+		} else if (techs == "Tech-1") {
+			document.getElementById("helperId").value = "dwm";
+		} else {
+			document.getElementById("helperId").value = "";
+		}
+	}
+	//Validation for Refresh button
+	function validateDetail(form) {
+		var viewChk = document.getElementById("view");
+		var replaceChk = document.getElementById("replace");
+
+		if (!(viewChk.checked == true || replaceChk.checked == true)) {
+			alert("Please select any one option to Refresh")
+		}
+
+	}
+
+	// Getting the confirmation from the user while resetting the data details.Date : 06-Apr-09
+	function validateResetDetails() {
+		if (confirm("Are you sure you want to reset all deleted details for this work package?")) {
+			document.forms[0].action = 'LES_wkpkg.htm';
+			document.forms[0]._page.value = "4";
+			return true;
+		} else {
+			return false;
+		}
+	}
+</SCRIPT>
+
+<SCRIPT language=JavaScript type=text/JavaScript
+	src="DWM-LES_Work_Package_files/default.js">
+	
+</SCRIPT>
+
+<SCRIPT language=JavaScript type=""
+	src="DWM-LES_Work_Package_files/CalendarPopup.js">
+</SCRIPT>
+
+<STYLE type=text/css>
+.details {
+	COLOR: #00348c;
+	FONT-SIZE: 10px
+}
+
+.style8 {
+	FONT-SIZE: 18px;
+	FONT-WEIGHT: bold
+}
+
+DIV#cable {
+	PADDING-BOTTOM: 0px;
+	MARGIN: 0px;
+	PADDING-LEFT: 0px;
+	PADDING-RIGHT: 0px;
+	HEIGHT: 100px;
+	OVERFLOW: auto;
+	PADDING-TOP: 0px
+}
+
+TABLE#PPR {
+	DISPLAY: none
+}
+
+TABLE#cost {
+	DISPLAY: block
+}
+
+.smalltextR {
+	TEXT-ALIGN: right;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	COLOR: #00348c;
+	FONT-SIZE: 10px
+}
+
+INPUT.btn75 {
+	BORDER-BOTTOM-STYLE: outset;
+	BACKGROUND-COLOR: #e8e8e8;
+	BORDER-LEFT-STYLE: outset;
+	WIDTH: 50px;
+	FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif;
+	BORDER-TOP-STYLE: outset;
+	HEIGHT: 22px;
+	COLOR: #54427a;
+	BORDER-RIGHT-STYLE: outset;
+	FONT-SIZE: 10px
+}
+</STYLE>
+<!-- -->
+<!-- Following script used to open a child window -->
+<!-- -->
+<script language="javascript">
+	function Reload() {
+		window.location.reload();
+	}
+	//Function for pop-up window
+	function NewWindow(mypage, myname, w, h, scroll, statusbar, tool, menu,
+			location) {
+		var winl = (screen.width - w) / 2;
+		var wint = (screen.height - h) / 2;
+		winprops = 'height=' + h + ',width=' + w + ',top=' + wint + ',left='
+				+ winl + ',scrollbars=' + scroll + ', status=' + statusbar
+				+ ',toolbar=' + tool + ', menubar=' + menu + ', location='
+				+ location + ',resizable=yes';
+		win = window.open(mypage, myname, winprops);
+		if (parseInt(navigator.appVersion) >= 4) {
+			win.window.focus();
+		}
+	}
+</script>
+<script language="javascript">
+	function Close() {
+		self.close();
+		if (opener && !opener.closed) {
+			opener.Reload();
+		}
+	}
+</script>
+</HEAD>
+<BODY onload="techOnChange();">
+	<FORM>
+		<TABLE border=0 cellSpacing=0 borderColor=#ffcc00 cellPadding=0
+			width="100%" align=center>
+			<TBODY>
+				<TR bgColor=#00348c>
+					<TD bgColor=#54427a height=36 vAlign=bottom colSpan=2>
+						<DIV id=dwmLogo>
+							<TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+								<TBODY>
+									<TR>
+										<TD><IMG src="DWM-LES_Work_Package_files/fnetlogo.gif"
+											width=198 height=54></TD>
+										<TD><IMG border=0 align=right
+											src="DWM-LES_Work_Package_files/DWM.gif" width=450 height=55></TD>
+									</TR>
+								</TBODY>
+							</TABLE>
+						</DIV>
+					</TD>
+				</TR>
+				<TR>
+					<TD vAlign=middle
+						background="DWM-LES_Work_Package_files/GrayBar.gif">
+						<TABLE border=0 cellSpacing=0 cellPadding=0 width=530>
+							<TBODY>
+								<TR>
+									<TD><IMG src="DWM-LES_Work_Package_files/cleargif.gif"
+										width=8 height=8><A class=topbar
+										href="LES-Work_Package_Search.htm">Expense Rehab Work List</A>
+										<SPAN class=dot2>&nbsp;•&nbsp; </SPAN> <A class=topbar
+										href="DWM-LES_User_Defined_Summary.htm">User Defined
+											Summary </A><SPAN class=dot2>&nbsp;•&nbsp; </SPAN><A class=topbar
+										href="DWM_Expense_Rehab_LES_Preferences_Menu.htm">Expense
+											Rehab Preferences</A> <SPAN class=dot2>&nbsp;•&nbsp; </SPAN><A
+										class=topbar href="#">Help</A></TD>
+								</TR>
+							</TBODY>
+						</TABLE>
+					</TD>
+					<TD height=34 vAlign=bottom
+						background=DWM-LES_Work_Package_files/GrayBar.gif noWrap
+						align=right></TD>
+				</TR>
+				<TR bgColor=#eeeeee>
+					<TD vAlign=top colSpan=2 align=center>
+						<TABLE border=0 cellPadding=5 width="100%">
+							<TBODY>
+								<TR>
+									<TD vAlign=top align=center>
+										<DIV align=left>
+											<TABLE class=breadcrumbs border=0 cellSpacing=0 cellPadding=0
+												width="100%">
+												<TBODY>
+													<TR>
+														<TD height=20 vAlign=top width="58%"></TD>
+														<TD width="42%" align=right>Welcome, <SPAN
+															class=UserName>dwm</SPAN>
+														</TD>
+													</TR>
+												</TBODY>
+											</TABLE>
+											<INPUT class=smalltext3 tabIndex=1 name=pprflag value=0
+												size=7 type=hidden> <FONT color=red></FONT><FONT
+												color=red></FONT><FONT color=red></FONT><FONT color=red></FONT><FONT
+												color=red></FONT><FONT color=red></FONT><FONT color=red></FONT><FONT
+												color=red></FONT><FONT color=red></FONT><FONT color=red></FONT><FONT
+												color=red></FONT><FONT color=red></FONT><FONT color=red></FONT><FONT
+												color=red></FONT><FONT color=red></FONT><FONT color=green><B></B></FONT>
+										</DIV>
+										<TABLE class=entry border=0 cellSpacing=0 width="100%">
+											<TBODY>
+												<TR align=center>
+													<TD colSpan=3 align=center>
+														<TABLE class=search border=0 cellSpacing=0 cellPadding=0>
+															<TBODY>
+																<TR vAlign=top>
+																	<TD height=30 align=left>&nbsp;</TD>
+																	<TD align=center><SPAN class=style8>Expense
+																			Rehab Work Package</SPAN></TD>
+																	<TD align=right>&nbsp;</TD>
+
+																</TR>
+																<TR vAlign=bottom>
+																	<TD height=30 align=left>&nbsp;&nbsp;&nbsp; <A
+																		href="javascript:NewWindow('DWM-LES_Work_Package_Print.htm','name','800','600','yes','no','no','yes', 'yes')">Print/Fax/Email</A><SPAN
+																		class=bullet>|</SPAN> <A
+																		href="DWM-Add_Complements.htm">Add Complements</A><SPAN
+																		class=bullet>|</SPAN> <A
+																		href="javascript:NewWindow('Expense_Rehab_PostTrackingDetails.htm','name','800','600','yes','no','no','yes', 'yes')">Post
+																			Analysis Details</A>
+																	</TD>
+																	<TD align=center><INPUT
+																		onmouseup="this.className='btnSmallBlue'"
+																		class=btnSmallBlue
+																		onmouseover="this.className='btnSmallBlue btnhov'"
+																		onmouseout="this.className='btnSmallBlue'"
+																		onmousedown="this.className='btnSmallBlue btndown'"
+																		onclick="return validateForm();" name=_target2
+																		value=Save type=submit> &nbsp; <INPUT
+																		onmouseup="this.className='btnSmallBlue'"
+																		class=btnSmallBlue
+																		onmouseover="this.className='btnSmallBlue btnhov'"
+																		onmouseout="this.className='btnSmallBlue'"
+																		onmousedown="this.className='btnSmallBlue btndown'"
+																		name=_cancel value=Cancel type=submit
+																		onclick="goToSearch()"></TD>
+																	<TD align=right><A
+																		href="Expense_Rehab_Work_Package_Characterization_do.htm">Characterization
+																			Form</A><SPAN class=bullet>|</SPAN> <A href="#"
+																		onclick="openGroupIdWindow();">Group IDs</A> <SPAN
+																		class=bullet>|</SPAN> <A href="#">Firefly</A>&nbsp;&nbsp;&nbsp;&nbsp;
+																	</TD>
+																</TR>
+																<TR vAlign=top align=center>
+																	<TD colSpan=3><HR color=#fdcf64 SIZE=1 width="97%"></TD>
+																</TR>
+																<TR valign="top" align="right">
+																	<TD></TD>
+																	<TD></TD>
+																	<TD align=right>Tools: <SELECT class=smalltext3
+																		size=1 name=selectTools>
+																			<OPTION selected value=-1>Select</OPTION>
+																			<OPTION value="MLT Test">MLT Test</OPTION>
+																			<OPTION value="Clear Defective Pairs in LFACS">Clear
+																				Defective Pairs in LFACS</OPTION>
+																			<OPTION value="WFA Group">WFA Group</OPTION>
+																			<OPTION value="Pair Status Report">Pair
+																				Status Report</OPTION>
+																	</SELECT> <INPUT onmouseup="this.className='btnGo'"
+																		style="width: 20px;" class=btnGo
+																		onmouseover="this.className='btnGo btnhov'"
+																		onmouseout="this.className='btnGo'"
+																		onmousedown="this.className='btnGo btndown'" value=Go
+																		type=submit
+																		onclick="goTools(document.forms[0].selectTools.value)" />&nbsp;&nbsp;&nbsp;&nbsp;
+																	</TD>
+																</TR>
+																<TR>
+																	<TD colSpan=3 align=center>
+																		<!-- Center table starts -->
+																		<TABLE class=search border=1 height=30 cellSpacing=0
+																			cellPadding=2 width=900>
+																			<TBODY>
+
+																				<TR>
+																					<TD vAlign=top width=210 align=left>
+																						<TABLE class=search border=0 cellSpacing=0
+																							cellPadding=0 width=210>
+																							<TBODY>
+																								<TR>
+																									<TD width=15><IMG
+																										src="DWM-LES_Work_Package_files/top_left1.gif"
+																										width=15 height=22></TD>
+																									<TD vAlign=bottom
+																										background=DWM-LES_Work_Package_files/top.gif
+																										width=176 align=center></TD>
+																									<TD width=16><IMG
+																										src="DWM-LES_Work_Package_files/top_right1.gif"
+																										width=16 height=22></TD>
+																								</TR>
+																								<TR>
+																									<TD
+																										background=DWM-LES_Work_Package_files/side_left.gif
+																										align=center>&nbsp;</TD>
+																									<TD bgColor=#ffffff vAlign=top align=center>
+																										<TABLE class=search border=0 cellSpacing=0
+																											cellPadding=1>
+																											<TBODY>
+																												<TR class=search>
+																													<TD align=right>Wkpkg Num:</TD>
+																													<TD noWrap align=left><INPUT
+																														class=smalltext3 tabIndex=1 name=wkpkgNum
+																														readOnly maxLength=12 value=108861 size=7>
+																													</TD>
+																												</TR>
+																												<TR class=search>
+																													<TD align=right>Wire Center:</TD>
+																													<TD align=left><INPUT class=smalltext3
+																														name=wkpkg.wireCenter readOnly
+																														value=480391 size=7></TD>
+																												</TR>
+
+																												<TR class=search>
+																													<TD align=right>Status:</TD>
+																													<TD align=left><SELECT
+																														class=smalltext3 name=selectedStatus>
+																															<OPTION value=All>All</OPTION>
+																															<OPTION value=AD>AD</OPTION>
+																															<OPTION value=ALM>ALM</OPTION>
+																															<OPTION selected value=AP>AP</OPTION>
+																															<OPTION value=C-ALM>C-ALM</OPTION>
+																															<OPTION value=C-OVR>C-OVR</OPTION>
+																															<OPTION value=CHARCP>CHARCP</OPTION>
+																															<OPTION value=CHARFM>CHARFM</OPTION>
+																															<OPTION value=CHARHD>CHARHD</OPTION>
+																															<OPTION value=CHARIN>CHARIN</OPTION>
+																															<OPTION value=CHARIP>CHARIP</OPTION>
+																															<OPTION value=CHARPA>CHARPA</OPTION>
+																															<OPTION value=CLOSED>CLOSED</OPTION>
+																															<OPTION value=CNCL>CNCL</OPTION>
+																															<OPTION value=CTCMP>CTCMP</OPTION>
+																															<OPTION value=CTHLD>CTHLD</OPTION>
+																															<OPTION value=CTINC>CTINC</OPTION>
+																															<OPTION value=CTIP>CTIP</OPTION>
+																															<OPTION value=CTPRE>CTPRE</OPTION>
+																															<OPTION value=D>D</OPTION>
+																															<OPTION value=DAVAR>DAVAR</OPTION>
+																															<OPTION value=D-ALM>D-ALM</OPTION>
+																															<OPTION value=DPLC>DPLC</OPTION>
+																															<OPTION value=DSP>DSP</OPTION>
+																															<OPTION value=DSPLC>DSPLC</OPTION>
+																															<OPTION value=DVRCMP>DVRCMP</OPTION>
+																															<OPTION value=DVRIP>DVRIP</OPTION>
+																															<OPTION value=DVRPRE>DVRPRE</OPTION>
+																															<OPTION value=E>E</OPTION>
+																															<OPTION value=FLDCMP>FLDCMP</OPTION>
+																															<OPTION value=HOLD>HOLD</OPTION>
+																															<OPTION value=INACT>INACT</OPTION>
+																															<OPTION value=INC>INC</OPTION>
+																															<OPTION value=INFLD>INFLD</OPTION>
+																															<OPTION value=JEP>JEP</OPTION>
+																															<OPTION value=JEPC>JEPC</OPTION>
+																															<OPTION value=JEPR>JEPR</OPTION>
+																															<OPTION value=JEPS>JEPS</OPTION>
+																															<OPTION value=MACMP>MACMP</OPTION>
+																															<OPTION value=MAHLD>MAHLD</OPTION>
+																															<OPTION value=NSW>NSW</OPTION>
+																															<OPTION value=OPEN>OPEN</OPTION>
+																															<OPTION value=PC>PC</OPTION>
+																															<OPTION value=PCMP>PCMP</OPTION>
+																															<OPTION value=PL>PL</OPTION>
+																															<OPTION value=PLCCMP>PLCCMP</OPTION>
+																															<OPTION value=PLD>PLD</OPTION>
+																															<OPTION value=PND>PND</OPTION>
+																															<OPTION value=PNDCR>PNDCR</OPTION>
+																															<OPTION value=PNDCT>PNDCT</OPTION>
+																															<OPTION value=PNDDSN>PNDDSN</OPTION>
+																															<OPTION value=PNDDVR>PNDDVR</OPTION>
+																															<OPTION value=PNDFLD>PNDFLD</OPTION>
+																															<OPTION value=PNDMA>PNDMA</OPTION>
+																															<OPTION value=PNDPLC>PNDPLC</OPTION>
+																															<OPTION value=PNDSPL>PNDSPL</OPTION>
+																															<OPTION value=PNDWW>PNDWW</OPTION>
+																															<OPTION value=PPR>PPR</OPTION>
+																															<OPTION value=PRE>PRE</OPTION>
+																															<OPTION value=REF>REF</OPTION>
+																															<OPTION value=RESUB>RESUB</OPTION>
+																															<OPTION value=RET>RET</OPTION>
+																															<OPTION value=REVDNQ>REVDNQ</OPTION>
+																															<OPTION value=ROK>ROK</OPTION>
+																															<OPTION value=SPLCMP>SPLCMP</OPTION>
+																															<OPTION value=TRK>TRK</OPTION>
+																															<OPTION value=WWCMP>WWCMP</OPTION>
+																															<OPTION value=WWHLD>WWHLD</OPTION>
+																															<OPTION value=WWINC>WWINC</OPTION>
+																															<OPTION value=WWIP>WWIP</OPTION>
+																															<OPTION value=WWPRE>WWPRE</OPTION>
+																													</SELECT></TD>
+																												</TR>
+																												<TR class=search>
+																													<TD align=right>Expert Wgt:</TD>
+																													<TD align=left><INPUT class=smalltext3
+																														tabIndex=4 name=expsysWght maxLength=4
+																														value=315 size=7></TD>
+																												</TR>
+																												<TR>
+																													<TD noWrap align=right>VOT $</TD>
+																													<TD align=left><INPUT class=smalltext3
+																														name=estSavings readOnly value=0.0 size=6></TD>
+																												</TR>
+																												<TR class=search>
+																													<TD align=right>EDGE Ticket No:</TD>
+																													<TD align=left nowrap><INPUT
+																														class=smalltext3 tabIndex=5 name=forceTkt
+																														maxLength=10 size=10> <!--<INPUT style="COLOR: #00348c;" onmouseup="this.className='btn75'" class=btn75 onmouseover="this.className='btn75 btnhov'" onmouseout="this.className='btn75'" onmousedown="this.className='btn75 btndown'"  name=_target1 value="Create" type=button>-->
+																													</TD>
+																												</TR>
+																												<TR class=search>
+																													<TD noWrap align=right>Wkpkg Type:</TD>
+																													<TD align=left><SELECT
+																														class=smalltext3 name=packageType
+																														style="width: 100">
+																															<OPTION selected value=-1>Select</OPTION>
+																															<OPTION value=0950>Cost</OPTION>
+																															<OPTION value=0951>Defective
+																																Pair</OPTION>
+																															<OPTION value=0952>Dispatch
+																																Reduction</OPTION>
+																															<OPTION value=0953>DLC
+																																electronic troubles</OPTION>
+																															<OPTION value=0954>Drops</OPTION>
+																															<OPTION value=0955>Failure
+																																Frequency</OPTION>
+																															<OPTION value=0956>First Mile</OPTION>
+																															<OPTION value=0957>Predictor</OPTION>
+																													</SELECT></TD>
+																												</TR>
+																												<TR class=search>
+																													<TD align=right>Job Type:</TD>
+																													<TD align=left><SELECT
+																														class=smalltext3 name=selectedJobType>
+																															<OPTION selected value=Select>Select</OPTION>
+																															<OPTION value=RTCALOC>RTCALOC</OPTION>
+																															<OPTION value=RTCFW>RTCFW</OPTION>
+																															<OPTION value=RTCT>RTCT</OPTION>
+																															<OPTION value=RTDNA>RTDNA</OPTION>
+																															<OPTION value=RTDPR>RTDPR</OPTION>
+																															<OPTION value=RTDSR>RTDSR</OPTION>
+																															<OPTION value=RTHELP>RTHELP</OPTION>
+																															<OPTION value=RTHLPF>RTHLPF</OPTION>
+																															<OPTION value=RTMFVS>RTMFVS</OPTION>
+																															<OPTION value=RTMIFT>RTMIFT</OPTION>
+																															<OPTION value=RTMIST>RTMIST</OPTION>
+																															<OPTION value=RTPLS>RTPLS</OPTION>
+																															<OPTION value=RTPRED>RTPRED</OPTION>
+																															<OPTION value=RTPSFT>RTPSFT</OPTION>
+																															<OPTION value=RTPSST>RTPSST</OPTION>
+																															<OPTION value=RTTO>RTTO</OPTION>
+																													</SELECT></TD>
+																												</TR>
+																												<TR>
+																													<TD align=right nowrap># Rehab Wkpkgs:</TD>
+																													<TD align=left><a
+																														href="javascript:NewWindow('Rehab_Work_List.htm','name','600','600','yes','no','no','no', 'yes')">
+																															2</a></TD>
+																												</TR>
+																												<TR>
+																													<TD noWrap align=right>Total Work Hrs:</TD>
+																													<TD align=left><INPUT class=smalltext3
+																														name=totalWorkHours maxLength=6 value=0.0
+																														size=7></TD>
+																												</TR>
+																												<tr>
+																													<TD align="right">Post Tracking:</TD>
+																													<TD align="left"><SELECT id=postTrack
+																														class=smalltext3 tabIndex=17
+																														name=wkpkg.dispCode>
+																															<OPTION selected value=-1>Select</OPTION>
+																															<OPTION value=Yes>Yes</OPTION>
+																															<OPTION value=No>No</OPTION>
+																													</SELECT></TD>
+																												</tr>
+																												<TR class=search>
+																													<TD align=right nowrap>Jump to Wkpkg:</TD>
+																													<TD noWrap align=left><INPUT
+																														class=smalltext3 name=wkpkgNumber
+																														maxLength=8 size=8> <INPUT
+																														onmouseup="this.className='btnGo'"
+																														class=btnGo
+																														onmouseover="this.className='btnGo btnhov'"
+																														onmouseout="this.className='btnGo'"
+																														onmousedown="this.className='btnGo btndown'"
+																														onclick="return submitGo(wkpkgNumber);"
+																														name=_target1 value=Go type=submit
+																														style="height: 18px"></TD>
+																												</TR>
+																												<TR class=search>
+																													<TD align=right nowrap>BPC Ticket:</TD>
+																													<TD noWrap align=left><INPUT
+																														class=smalltext3 name=wkpkgNumber
+																														maxLength=8 size=8> <INPUT
+																														style="height: 20px; COLOR: #00348c;"
+																														onmouseup="this.className='btn75'"
+																														class=btn80A
+																														onmouseover="this.className='btn80A btnhov'"
+																														onmouseout="this.className='btn80A'"
+																														onmousedown="this.className='btn80A btndown'"
+																														name=_target1 value="Attach to BPC"
+																														type=button></TD>
+																												</TR>
+																											</TBODY>
+																										</TABLE>
+																									</TD>
+																									<TD
+																										background=DWM-LES_Work_Package_files/side_right.gif
+																										align=center>&nbsp;</TD>
+																								</TR>
+																								<TR>
+																									<TD align=center><IMG
+																										src="DWM-LES_Work_Package_files/bottom_left.gif"
+																										width=15 height=15></TD>
+																									<TD
+																										background=DWM-LES_Work_Package_files/bottom.gif
+																										align=center>&nbsp;</TD>
+																									<TD align=center><IMG
+																										src="DWM-LES_Work_Package_files/bottom_right.gif"
+																										width=16 height=15></TD>
+																								</TR>
+																							</TBODY>
+																						</TABLE>
+																						<TABLE class=search border=0 cellSpacing=0
+																							cellPadding=0 width="260">
+																							<TBODY>
+																								<TR>
+																									<TD width=15><IMG
+																										src="DWM-LES_Work_Package_files/top_left.gif"
+																										width=15 height=27></TD>
+																									<TD vAlign=bottom
+																										background=DWM-LES_Work_Package_files/top.gif
+																										width=296 align=center>Analyst</TD>
+																									<TD width=16><IMG
+																										src="DWM-LES_Work_Package_files/top_right.gif"
+																										width=16 height=27></TD>
+																								</TR>
+																								<TR>
+																									<TD
+																										background=DWM-LES_Work_Package_files/side_left.gif
+																										align=center>&nbsp;</TD>
+																									<TD bgColor=#ffffff align=center>
+																										<TABLE class=search border=0 cellSpacing=0
+																											borderColor=#999999 cellPadding=1>
+																											<TBODY>
+																												<TR borderColor=#ffffff>
+																													<TD width=50 align=right>Name:</TD>
+																													<TD width=35><INPUT id=insideTechName
+																														name=wkpkg.insideTechName maxLength=30
+																														value="Application Super User" size=30
+																														type=hidden> <INPUT
+																														id=display_insideTechName class=smalltext3
+																														name=display_insideTechName1 readOnly
+																														size=17></TD>
+																													<TD width=33><IMG
+																														src="DWM-LES_Work_Package_files/cleargif.gif"
+																														width=18 height=2></TD>
+																												</TR>
+																												<TR borderColor=#ffffff>
+																													<TD noWrap align=right>ATTUID:</TD>
+																													<TD><INPUT
+																														onchange=javascript:validateDelete1(this);
+																														class=smalltext3 tabIndex=9
+																														name=insideUserId maxLength=12 value=dwm
+																														size=17></TD>
+																													<TD><A id=anchor1
+																														onmouseover="MM_swapImage('Image16271','','assets/lookup_over.gif',1)"
+																														title="User Lookup" name=anchor1><IMG
+																															id=Image162 border=0 name=Image16271
+																															src="DWM-LES_Work_Package_files/lookup3.gif"
+																															width=18 height=21></A></TD>
+																												</TR>
+																											</TBODY>
+																										</TABLE>
+																									</TD>
+																									<TD
+																										background=DWM-LES_Work_Package_files/side_right.gif
+																										align=center>&nbsp;</TD>
+																								</TR>
+																								<TR>
+																									<TD height=15 align=center><IMG
+																										src="DWM-LES_Work_Package_files/bottom_left.gif"
+																										width=15 height=15></TD>
+																									<TD
+																										background=DWM-LES_Work_Package_files/bottom.gif
+																										align=center>&nbsp;</TD>
+																									<TD align=center><IMG
+																										src="DWM-LES_Work_Package_files/bottom_right.gif"
+																										width=16 height=15></TD>
+																								</TR>
+																							</TBODY>
+																						</TABLE>
+																						<TABLE class=search border=0 cellSpacing=0
+																							cellPadding=0 width="260">
+																							<TBODY>
+																								<TR>
+																									<TD width=15><IMG
+																										src="DWM-LES_Work_Package_files/top_left.gif"
+																										width=15 height=27></TD>
+																									<TD vAlign=bottom
+																										background=DWM-LES_Work_Package_files/top.gif
+																										width=296 align=center>Outside
+																										Techinician</TD>
+																									<TD width=16><IMG
+																										src="DWM-LES_Work_Package_files/top_right.gif"
+																										width=16 height=27></TD>
+																								</TR>
+																								<TR>
+																									<TD
+																										background=DWM-LES_Work_Package_files/side_left.gif
+																										align=center>&nbsp;</TD>
+																									<TD bgColor=#ffffff align=center>
+																										<TABLE class=search border=0 cellSpacing=0
+																											borderColor=#999999 cellPadding=1>
+																											<TBODY>
+																												<TR borderColor=#ffffff>
+																													<TD width=50 align=right>Name:</TD>
+																													<TD width=35><INPUT id=insideTechName
+																														name=wkpkg.insideTechName maxLength=30
+																														value="Application Super User" size=30
+																														type=hidden> <INPUT
+																														id=display_insideTechName class=smalltext3
+																														name=display_insideTechName1 readOnly
+																														size=17></TD>
+																													<TD width=33><IMG
+																														src="DWM-LES_Work_Package_files/cleargif.gif"
+																														width=18 height=2></TD>
+																												</TR>
+																												<TR borderColor=#ffffff>
+																													<TD noWrap align=right>ATTUID:</TD>
+																													<TD><INPUT
+																														onchange=javascript:validateDelete1(this);
+																														class=smalltext3 tabIndex=9
+																														name=insideUserId maxLength=12 value=""
+																														size=17></TD>
+																													<TD><A id=anchor1
+																														onmouseover="MM_swapImage('Image16271','','assets/lookup_over.gif',1)"
+																														title="User Lookup" name=anchor1><IMG
+																															id=Image162 border=0 name=Image16271
+																															src="DWM-LES_Work_Package_files/lookup3.gif"
+																															width=18 height=21></A></TD>
+																												</TR>
+																											</TBODY>
+																										</TABLE>
+																									</TD>
+																									<TD
+																										background=DWM-LES_Work_Package_files/side_right.gif
+																										align=center>&nbsp;</TD>
+																								</TR>
+																								<TR>
+																									<TD height=15 align=center><IMG
+																										src="DWM-LES_Work_Package_files/bottom_left.gif"
+																										width=15 height=15></TD>
+																									<TD
+																										background=DWM-LES_Work_Package_files/bottom.gif
+																										align=center>&nbsp;</TD>
+																									<TD align=center><IMG
+																										src="DWM-LES_Work_Package_files/bottom_right.gif"
+																										width=16 height=15></TD>
+																								</TR>
+																							</TBODY>
+																						</TABLE>
+																						<TABLE class=search border=0 cellSpacing=0
+																							cellPadding=0>
+																							<TBODY>
+																								<TR>
+																									<TD width=15><IMG
+																										src="DWM-LES_Work_Package_files/top_left.gif"
+																										width=15 height=27></TD>
+																									<TD vAlign=bottom
+																										background=DWM-LES_Work_Package_files/top.gif
+																										width=196 align=center>Helper
+																										Techinicians</TD>
+																									<TD width=16><IMG
+																										src="DWM-LES_Work_Package_files/top_right.gif"
+																										width=16 height=27></TD>
+																								</TR>
+																								<TR>
+																									<TD
+																										background=DWM-LES_Work_Package_files/side_left.gif
+																										align=center>&nbsp;</TD>
+																									<TD bgColor=#ffffff align=center>
+																										<TABLE class=search border=0 cellSpacing=0
+																											borderColor=#999999 cellPadding=1>
+																											<TBODY>
+																												<TR borderColor=#ffffff>
+																													<TD colspan="2"><select id="techs"
+																														class=smalltext3
+																														onchange="techOnChange();" name="techs">
+																															<option value="-1">Select</option>
+																															<option value="Tech-1">Helper
+																																Technician-1</option>
+																															<option value="Tech-2">Helper
+																																Technician-2</option>
+																															<option value="Tech-3">Helper
+																																Technician-3</option>
+																															<option value="Tech-4">Helper
+																																Technician-4</option>
+																													</select></TD>
+																													<TD><IMG
+																														src="DWM-LES_Work_Package_files/cleargif.gif"
+																														width=18 height=2></TD>
+																												</TR>
+																												<!--<TR borderColor=#ffffff>
+						                                <TD align=right nowrap>Helper Ticket:</TD>
+												        <TD nowrap>
+															<INPUT id=insideTechName name=wkpkg.insideTechName maxLength=30 value="Application Super User" size=30 type=hidden> <INPUT id=display_insideTechName 
+															class=smalltext3 name=hlprTicket size=12 readonly="readonly" style="background-color:#cccccc !important;cursor:not-allowed;"onfocus="this.blur()"> <INPUT style="COLOR: #00348c;width:50px;height:20px" onmouseup="this.className='btn75'" class=btn75 onmouseover="this.className='btn75 btnhov'" onmouseout="this.className='btn75'" onmousedown="this.className='btn75 btndown'"  name=_target1 value="Create" type=button>
+														</TD>														
+						                                <TD><IMG src="DWM-LES_Work_Package_files/cleargif.gif" width=18 height=2></TD>
+													</TR>-->
+																												<TR borderColor=#ffffff>
+																													<TD align=right>Name:</TD>
+																													<TD align="left"><INPUT
+																														id=insideTechName
+																														name=wkpkg.insideTechName maxLength=30
+																														value="Application Super User" size=30
+																														type=hidden> <INPUT
+																														id=display_insideTechName class=smalltext3
+																														name=display_helper readOnly size=17>
+																													</TD>
+																													<TD><IMG
+																														src="DWM-LES_Work_Package_files/cleargif.gif"
+																														width=18 height=2></TD>
+																												</TR>
+																												<TR borderColor=#ffffff>
+																													<TD noWrap align=right>ATTUID:</TD>
+																													<TD align="left"><INPUT
+																														class=smalltext3 tabIndex=9 id="helperId"
+																														name=helperId maxLength=12 size=17 />&nbsp;<A
+																														style="vertical-align: middle" id=anchor1
+																														onmouseover="MM_swapImage('Image16271','','assets/lookup_over.gif',1)"
+																														title="User Lookup" name=anchor1><IMG
+																															id=Image162 border=0 name=Image16271
+																															src="DWM-LES_Work_Package_files/lookup3.gif"
+																															width=18 height=21></A></TD>
+																													<TD><IMG
+																														src="DWM-LES_Work_Package_files/cleargif.gif"
+																														width=18 height=2></TD>
+																												</TR>
+																											</TBODY>
+																										</TABLE>
+																									</TD>
+																									<TD
+																										background=DWM-LES_Work_Package_files/side_right.gif
+																										align=center>&nbsp;</TD>
+																								</TR>
+																								<TR>
+																									<TD height=15 align=center><IMG
+																										src="DWM-LES_Work_Package_files/bottom_left.gif"
+																										width=15 height=15></TD>
+																									<TD
+																										background=DWM-LES_Work_Package_files/bottom.gif
+																										align=center>&nbsp;</TD>
+																									<TD align=center><IMG
+																										src="DWM-LES_Work_Package_files/bottom_right.gif"
+																										width=16 height=15></TD>
+																								</TR>
+																							</TBODY>
+																						</TABLE> <!--<td width="1%" align="right" background="assets/yellow_line3.gif">&nbsp;</td>-->
+																						<!--<td width="1%"background="assets/yellow_line3.gif">&nbsp;</td>-->
+																					<TD vAlign=top width=500 align=left>
+																						<TABLE class=search border=0 cellSpacing=0
+																							cellPadding=0 width="100%" align=center>
+																							<THEAD>
+																								<TR class=purplebar>
+																									<TH height=30 width="15%">Cable</TH>
+																									<TH width="13%">Facility</TH>
+																									<TH width="12%">Low</TH>
+																									<TH width="12%">High</TH>
+																									<TH width="12%">DA</TH>
+																									<TH width="18%">Conditioned<br>Date
+																									</TH>
+																									<TH bgColor=#ffffff width="5%"></TH>
+																								</TR>
+																							</THEAD>
+																							<TFOOT>
+																								<TR>
+																									<TH colSpan=8></TH>
+																								</TR>
+																							</TFOOT>
+																							<TBODY>
+																								<TR>
+																									<TD colSpan=8 align=left>
+																										<DIV id=cable>
+																											<!-- begin ie hack -->
+																											<TABLE class=search border=0 cellSpacing=0
+																												width="95%" align=left>
+																												<TBODY>
+																													<TR class=graybar>
+																														<TD width="18%" align=middle>10475t</TD>
+																														<TD width="13%" align=middle>-</TD>
+																														<TD width="13%" align=middle>539</TD>
+																														<TD width="13%" align=middle>549</TD>
+																														<TD width="15%" align=middle>-</TD>
+																														<TD width="20%" align=middle nowrap>&nbsp;&nbsp;2009-06-08</TD>
+																													</TR>
+																													<TR class=whitebar>
+																														<TD width="18%" align=middle>4</TD>
+																														<TD width="13%" align=middle>f1</TD>
+																														<TD width="13%" align=middle>1</TD>
+																														<TD width="13%" align=middle>10</TD>
+																														<TD width="15%" align=middle>113731</TD>
+																														<TD width="20%" align=middle nowrap>&nbsp;&nbsp;2008-06-04</TD>
+																													</TR>
+																												</TBODY>
+																											</TABLE>
+																										</DIV>
+																									</TD>
+																								</TR>
+																							</TBODY>
+																						</TABLE> <BR>
+																						<div id="accordion">
+																							<h1>
+																								<a href="#" style="font-weight: bold;">System
+																									Remarks</a>
+																							</h1>
+																							<div>
+																								<p class="remarks">
+																									<textarea cols="60" rows="7" readonly nowrap>
+##15-Jun-2009 (from CTIP to CTINC) --by ks1234  
+##19-JUN-09 Status (from CHARIP to CHARIN) -- by ks1234                                                       
+##19-JUN-09 Status (from CHARIP to CHARIN) -- by ks1234                                                       
+##19-JUN-09 Status (from CHARIN to CHARIN) -- by ks1234    
+##19-JUN-09 Status (from CHARIP to CHARIN) -- by ks1234                                                       
+##19-JUN-09 Status (from CHARIP to CHARIN) -- by ks1234                                                      
+##19-JUN-09 Status (from CTIP to CTINC) -- by ks1234                                                         
+##19-JUN-09 Status (from CHARIP to CHARHD)  -- by ks1234                                                     
+##19-JUN-09 Status (from CHARIN to CHARHD)  -- by ks1234                                                     
+##19-JUN-09 Status (from CHARIP to CHARHD)  -- by ks1234                                                     
+##19-JUN-09 Status (from CTIP to CTHLD)  -- by ks1234                                                        
+##19-JUN-09 Status (from CTHLD to CTINC)  -- by ks1234                                                       
+##19-JUN-09 Status (from CTINC to CTHLD)  -- by ks1234                                                       
+##19-JUN-09 Status (from CHARIP to CHARIN)  -- by ks1234
+##19-Jun-2009 04:07:40  -- by hmae
+##19-JUN-09 Status (from PND to INC)  -- by ks1234
+##19-JUN-09 Status (from CHARIP to CHARIN)  -- by ks1234
+##19-JUN-09 Status (from PND to INC)  -- by ks1234
+##19-JUN-09 Status (from INC to HLD)  -- by ks1234
+##19-JUN-09 Status (from INC to HLD)  -- by ks1234
+##19-JUN-09 Status (from IP to HLD)  -- by ks1234
+##19-JUN-09 Status (from CTINC to CTHLD)  -- by ks1234
+##19-JUN-09 Status (from PND to HLD)  -- by ks1234
+##19-JUN-09 Status (from IP to HLD)  -- by ks1234
+##19-JUN-09 Status (from HLD to INC)  -- by ks1234
+##19-JUN-09 Status (from CHARIP to CHARIN)  -- by ks1234
+##19-JUN-09 Status (from CHARIP to CHARIN)  -- by ks1234
+##19-JUN-09 Status (from CHARIP to CHARIN)  -- by ks1234
+##19-JUN-09 Status (from PND to INC)  -- by ks1234
+##19-JUN-09 Status (from INC to HLD)  -- by ks1234
+##19-JUN-09 Status (from IP to INC)  -- by ks1234
+##19-JUN-09 Status (from INC to HLD)  -- by ks1234
+##19-JUN-09 Status (from IP to INC)  -- by ks1234
+##19-JUN-09 Status (from INC to HLD)  -- by ks1234
+##19-JUN-09 Status (from HLD to INC)  -- by ks1234
+##19-JUN-09 Status (from CHARIP to CHARIN)  -- by ks1234                                                     
+##20-JUN-09 Status (from CHARIP to CHARIN)  -- by ks1234
+##20-JUN-09 Status (from CHARIP to CHARIN)  -- by ks1234
+##20-JUN-09 Status (from INC to HLD)  -- by ks1234
+##20-JUN-09 Status (from INC to HLD)  -- by ks1234
+##20-JUN-09 Status (from HLD to INC)  -- by ks1234
+##20-JUN-09 Status (from INC to HLD)  -- by ks1234
+##20-JUN-09 Status (from HLD to INC)  -- by ks1234
+##20-JUN-09 Status (from INC to HLD)  -- by ks1234
+##20-JUN-09 Status (from HLD to HLD)  -- by ks1234
+##20-JUN-09 Status (from HLD to INC)  -- by ks1234
+##20-JUN-09 Status (from HLD to INC)  -- by ks1234
+##20-JUN-09 Status (from CHARIP to CHARIN)  -- by ks1234
+##20-JUN-09 Status (from PND to HLD)  -- by ks1234
+##20-JUN-09 Status (from PND to INC)  -- by ks1234
+##20-JUN-09 Status (from CHARIP to CHARIN)  -- by ks1234
+##20-JUN-09 Status (from HLD to HLD)  -- by ks1234 
+##20-JUN-09 Status (from CHARIP to CHARIN)  -- by ks1234
+##20-JUN-09 Status (from CHARIN to CHARHD)  -- by ks1234
+##20-Jun-2009 23:18:44 Status (from CHARIN to CHARHD)  -- by ks1234
+</textarea>
+																								</p>
+																							</div>
+																							<h3>
+																								<a href="#" style="font-weight: bold;">User
+																									Remarks</a>
+																							</h3>
+																							<div>
+																								<p class="remarks">
+																									<textarea cols="60" rows="7" readonly>##19-Jun-2009 04:07:40 : FOR DETAILS SEE PDF AT WEB SITE   http://ce.lno.att.com/rao/PLS_Handoff/analysis.cfm?job_num=0FC34034N,  DR=24, BR=110, TOTAL=134
+CORRECTION: DR=24, BR=106, TOTAL=130 -- by dwm
+##22-Jun-2009 20:08:35 : cable 1915H,776-800/ remove bridge tap@ 4 n. bethany rd/Char on package#691690 cable 1669f 1-400/ locate wet section@ 1669 flicker rd 
+Section 1 - From 1669 Flicker Road to the south west corner of the Int. of Flicker Road & Thrasher Road (IPD#3014634,116220,116224 ). Cable 1669F 1-300, BHAG-300 need to replace 470 feet, section is wet.
+Section 2 ? From the South West corner of Flicker Road @ Eagle Drive to 10553 Eagle Drive. Need to replace 350 feet of  BHAG-300, section is full of water. Cable 1669F 1-200, 301-325,351-400 (IPD#45206)
+Section ? 3 From 10605 Thrasher Road to 10635 Woodcock Street. Need to replace 450 feet of BHAG-50, section is wet. Cable 1669F 501-550 (IPD#117207, 117208).  -- by dwm
+	</textarea>
+																								</p>
+																							</div>
+																							<h3>
+																								<a href="#" style="font-weight: bold;">Add
+																									User Remarks</a>
+																							</h3>
+																							<div>
+																								<p class="remarks">
+																									<textarea cols="60" rows="7">test</textarea>
+																								</p>
+																							</div>
+																							<h3>
+																								<a href="#" style="font-weight: bold;">Daily
+																									Notes</a>
+																							</h3>
+																							<div>
+
+																								<p class="remarks">
+																									<textarea cols="60" rows="7" readonly></textarea>
+																								</p>
+																							</div>
+																							<h3>
+																								<a href="#" style="font-weight: bold;">Action
+																									Taken</a>
+																							</h3>
+																							<div>
+																								<p class="remarks">
+																									<textarea cols="60" rows="7" readonly> </textarea>
+																								</p>
+																							</div>
+																						</div> <!--End Table for Remarks --> <BR>
+																						<table border=0 cellspacing=10>
+																							<tr>
+																								<td><input type="button" name="export"
+																									value="Export Daily Notes"
+																									onmouseup="this.className='btn140'"
+																									class=btn140
+																									onmouseover="this.className='btn140 btnhov'"
+																									onmouseout="this.className='btn140'"
+																									onmousedown="this.className='btn140 btndown'"
+																									style="font-weight: bold; font-size: 11px" /></td>
+																								<td><input type="button" name="export"
+																									value="Export Action Taken"
+																									onmouseup="this.className='btn140'"
+																									class=btn140
+																									onmouseover="this.className='btn140 btnhov'"
+																									onmouseout="this.className='btn140'"
+																									onmousedown="this.className='btn140 btndown'"
+																									style="font-weight: bold; font-size: 11px" /></td>
+																							</tr>
+																						</table> <BR>
+
+																						<table border=0 class=search>
+
+																						</table>
+																					</TD>
+																					<!--<td width="1%" align="left" background="assets/yellow_line3.gif">&nbsp;</td>-->
+
+																					<TD vAlign=top width=181 align=center>
+																									<table border=1>
+																							<tr>
+				<td colspan="2" width="100px">
+				<table border=1>
+					<TR class="purplebar">
+							<TH height="30" width="15%" colspan="6">RAO</TH>
+					</TR>
+					<tr>
+					<td width="14%" align="middle">Code 4</td>
+					<td width="14%" align="middle">Specials</td>
+					<td width="14%" align="middle">Codes</td>
+					<td width="14%" align="middle">Est. Contractor Costs</td>
+					<td width="14%" align="middle">Est. Labor Hrs</td>
+					<td width="14%" align="middle">EST IRR</td>
+					</tr>
+				</table>
+			</td>
+			<td colspan="2" width="100px">
+			<table border=1>
+					<TR class="purplebar">
+							<TH height="30" width="15%" colspan="6">PMFF</TH>
+					</TR>
+					<tr>
+					<td>Code 4</td>
+					<td>Specials</td>
+					<td>Codes</td>
+					<td>Est. Contractor Costs</td>
+					<td>Est. Labor Hrs</td>
+					<td>EST IRR</td>
+					</tr>
+				</table></td>
+			<td colspan="2" width="100px"><table border=1>
+					<TR class="purplebar">
+						<TH height="30" width="15%" colspan="6">Post Tracked</TH>
+					</TR>
+					<tr>
+					<td>Code 4</td>
+					<td>Specials</td>
+					<td>Codes</td>
+					<td>Est. Contractor Costs</td>
+					<td>Est. Labor Hrs</td>
+					<td>EST IRR</td>
+					</tr>
+				</table></td>
+		</tr>
+																							<tr>
+																								<td valign="top"
+																									style="height: 695px; width: 425px;" colspan="3">
+																									<TABLE class=search border=0 cellSpacing=0
+																										cellPadding=0 width=186>
+
+																										<TBODY>
+																											<TR>
+																												<TD width=15><IMG
+																													src="DWM-LES_Work_Package_files/top_left.gif"
+																													width=15 height=27></TD>
+																												<TD vAlign=bottom
+																													background=DWM-LES_Work_Package_files/top.gif
+																													width=139 align=center>Work Package
+																													Dates</TD>
+																												<TD width=16><IMG
+																													src="DWM-LES_Work_Package_files/top_right.gif"
+																													width=16 height=27></TD>
+																											</TR>
+																											<TR>
+																												<TD
+																													background=DWM-LES_Work_Package_files/side_left.gif
+																													align=center>&nbsp;</TD>
+																												<TD bgColor=#ffffff align=center>
+																													<TABLE class=search border=0 cellSpacing=0
+																														borderColor=#999999 cellPadding=1
+																														width=148>
+																														<TBODY>
+																															<TR borderColor=#ffffff>
+																																<TD width=60 align=right>Create:</TD>
+																																<TD width=55><INPUT
+																																	class=smalltext3 name=createDate
+																																	readOnly value=2009-03-28 size=8></TD>
+																																<TD width=33></TD>
+																															</TR>
+																															<TR borderColor=#ffffff>
+																																<TD align=right>Start:</TD>
+																																<TD><INPUT class=smalltext3
+																																	tabIndex=12 name=startDate maxLength=10
+																																	size=8></TD>
+																																<TD><A id=anchor1
+																																	onclick="CalendarPopup().select(document.forms[0].startDate, 'anchor1','yyyy-MM-dd'); return false;"
+																																	name=anchor1><IMG id=Image162
+																																		border=0 name=Image16221
+																																		src="DWM-LES_Work_Package_files/lookup3.gif"
+																																		width=18 height=21></A></TD>
+																															</TR>
+																															<TR borderColor=#ffffff>
+																																<TD align=right>Status Effective:</TD>
+																																<TD><INPUT class=smalltext3
+																																	tabIndex=13 name=closeDate maxLength=10
+																																	size=8></TD>
+																																<TD><A id=anchor1
+																																	onclick="CalendarPopup().select(document.forms[0].closeDate, 'anchor1','yyyy-MM-dd'); return false;"
+																																	onmouseover="MM_swapImage('Image16231','','assets/lookup_over.gif',1)"
+																																	title="Calendar Lookup" name=anchor1><IMG
+																																		id=Image162 border=0 name=Image16231
+																																		src="DWM-LES_Work_Package_files/lookup3.gif"
+																																		width=18 height=21></A></TD>
+																															</TR>
+																															<TR borderColor=#ffffff>
+																																<TD align=right>Analyst Start:</TD>
+																																<TD><INPUT class=smalltext3
+																																	tabIndex=13 name=analystStartDate
+																																	maxLength=10 size=8></TD>
+																																<TD><A id=anchor1
+																																	onclick="CalendarPopup().select(document.forms[0].analystStartDate, 'anchor1','yyyy-MM-dd'); return false;"
+																																	onmouseover="MM_swapImage('Image16231','','assets/lookup_over.gif',1)"
+																																	title="Calendar Lookup" name=anchor1><IMG
+																																		id=Image162 border=0 name=Image16231
+																																		src="DWM-LES_Work_Package_files/lookup3.gif"
+																																		width=18 height=21></A></TD>
+																															</TR>
+
+																															<TR borderColor=#ffffff>
+																																<TD align=right>Closed:</TD>
+																																<TD><INPUT class=smalltext3
+																																	tabIndex=13 name=closeDate maxLength=10
+																																	size=8></TD>
+																																<TD><A id=anchor1
+																																	onclick="CalendarPopup().select(document.forms[0].closeDate, 'anchor1','yyyy-MM-dd'); return false;"
+																																	name=anchor1><IMG id=Image162
+																																		border=0 name=Image16231
+																																		src="DWM-LES_Work_Package_files/lookup3.gif"
+																																		width=18 height=21></A></TD>
+																															</TR>
+																														</TBODY>
+																													</TABLE>
+																												</TD>
+																												<TD
+																													background=DWM-LES_Work_Package_files/side_right.gif
+																													align=center>&nbsp;</TD>
+																											</TR>
+																											<TR>
+																												<TD align=center><IMG
+																													src="DWM-LES_Work_Package_files/bottom_left.gif"
+																													width=15 height=15></TD>
+																												<TD
+																													background=DWM-LES_Work_Package_files/bottom.gif
+																													align=center>&nbsp;</TD>
+																												<TD align=center><IMG
+																													src="DWM-LES_Work_Package_files/bottom_right.gif"
+																													width=16 height=15></TD>
+																											</TR>
+																										</TBODY>
+																									</TABLE>
+																									<table border="0" cellSpacing="0"
+																										cellPadding="0" width="150">
+																										<tbody>
+																											<tr>
+																												<td>
+
+																													<table class="search" border="0"
+																														cellSpacing="0" cellPadding="0">
+																														<tbody>
+																															<tr>
+																																<td width="15"><img
+																																	src="DWM-LES_Work_Package_files/top_left.gif"
+																																	width="15" height="27"></td>
+																																<td vAlign="bottom"
+																																	background="DWM-LES_Work_Package_files/top.gif"
+																																	width="171" align="center">Temp
+																																	Wraps/Bypass Counts</td>
+																																<td width="16"><img
+																																	src="DWM-LES_Work_Package_files/top_right.gif"
+																																	width="16" height="27"></td>
+																															</tr>
+																															<tr>
+																																<td
+																																	background="DWM-LES_Work_Package_files/side_left.gif"
+																																	align="center">&nbsp;</td>
+																																<td bgColor="#ffffff" align="center">
+																																	<table class="search" border="0"
+																																		cellSpacing="0" cellPadding="1"
+																																		width="160">
+																																		<tbody>
+																																			<tr>
+																																				<td noWrap="" align="left">Temp
+																																					Bypass POTS:</td>
+																																				<td align="left">&nbsp;<input
+																																					id="contractCostId"
+																																					class="smalltext3" tabIndex="16"
+																																					name="contractCost" maxLength="11"
+																																					value="3" size="7" readonly>
+																																				</td>
+																																			</tr>
+																																			<tr>
+																																				<td noWrap="" align="left">Temp
+																																					Bypass SPECIALS:</td>
+																																				<td align="left">&nbsp;<input
+																																					id="contractCostId"
+																																					class="smalltext3" tabIndex="16"
+																																					name="contractCost" maxLength="11"
+																																					value="4" size="7" readonly>
+																																				</td>
+																																			</tr>
+																																			<tr>
+																																				<td noWrap="" align="left">Temp
+																																					Wraps:</td>
+																																				<td align="left">&nbsp;<input
+																																					id="contractCostId"
+																																					class="smalltext3" tabIndex="16"
+																																					name="contractCost" maxLength="11"
+																																					value="5" size="7" readonly>
+																																				</td>
+																																			</tr>
+																																			<tr borderColor="#eeeeee">
+																																				<td colspan="2" align="middle"><input
+																																					onmouseup="this.className='btn140'"
+																																					class="btn140" tabIndex="17"
+																																					onmouseout="this.className='btn140'"
+																																					onmousedown="this.className='btn140 btndown'"
+																																					value="Temp/IW Placed"
+																																					type="button" name="command2"
+																																					onclick="goToTemp();"></td>
+																																			</tr>
+																																		</tbody>
+																																	</table>
+																																</td>
+																																<td
+																																	background="DWM-LES_Work_Package_files/side_right.gif"
+																																	align="center">&nbsp;</td>
+																															</tr>
+																															<tr>
+																																<td align="center"><img
+																																	src="DWM-LES_Work_Package_files/bottom_left.gif"
+																																	width="15" height="15"></td>
+																																<td
+																																	background="DWM-LES_Work_Package_files/bottom.gif"
+																																	align="center">&nbsp;</td>
+																																<td align="center"><img
+																																	src="DWM-LES_Work_Package_files/bottom_right.gif"
+																																	width="16" height="15"></td>
+																															</tr>
+																														</tbody>
+																													</table>
+																												</td>
+																											</tr>
+																										</tbody>
+																									</table>
+																								</td>
+																								<TD vAlign=top width=166 align=center colspan="3">
+																									<TABLE class=search border=0 cellSpacing=0
+																										cellPadding=0 width=166>
+																										<TBODY>
+																											<TR>
+																												<TD width=15><IMG
+																													src="DWM-LES_Work_Package_files/top_left.gif"
+																													width=15 height=27></TD>
+																												<TD vAlign=bottom
+																													background=DWM-LES_Work_Package_files/top.gif
+																													width=165 align=center>Data Details</TD>
+																												<TD width=16><IMG
+																													src="DWM-LES_Work_Package_files/top_right.gif"
+																													width=16 height=27></TD>
+																											</TR>
+																											<TR>
+																												<TD
+																													background=DWM-LES_Work_Package_files/side_left.gif
+																													align=center>&nbsp;</TD>
+																												<TD bgColor=#ffffff align=center>
+																													<TABLE class=details border=1 cellSpacing=0
+																														borderColor=#cccccc cellPadding=1
+																														width=130>
+																														<TBODY>
+																															<TR align=center bgColor=#cccccc>
+																																<TD>Details Type</TD>
+																																<TD>Count</TD>
+																															</TR>
+																															<TR>
+																																<TD width=76><A class=counts
+																																	href="DWM-LES_Predictor_WP_Details.htm">Predictor</A></TD>
+																																<TD width=54 align=center>6</TD>
+																															</TR>
+
+																															<TR>
+																																<TD><A class=counts
+																																	href="Expense_Rehab_ASKME_Details.htm">ASKME</A></TD>
+																																<TD align=center>27</TD>
+																															</TR>
+																															<TR>
+																																<TD><A class=counts
+																																	href="DWM-LES_MONA_WP_Details.htm">MONA</A></TD>
+																																<TD align=center>1</TD>
+																															</TR>
+																															<TR>
+																																<TD><A class=counts
+																																	href="DWM-LES_PPR_Dedicated_WP_Details.htm">Dedicated</A></TD>
+																																<TD align=center>14</TD>
+																															</TR>
+																															<TR>
+																																<TD><A class=counts
+																																	href="DWM-LES_PPR_Working_WP_Details.htm">Working</A></TD>
+																																<TD align=center>10</TD>
+																															</TR>
+																															<TR>
+																																<TD><A class=counts
+																																	href="DWM-LES_PPR_Spare_Details.htm">Spare</A></TD>
+																																<TD align=center>2</TD>
+																															</TR>
+																															<TR>
+																																<TD><A class=counts
+																																	href="DWM-LES_PPR_Defective_WP_Details.htm">Defective</A></TD>
+																																<TD align=center>13</TD>
+																															</TR>
+																															<TR>
+																																<TD><A class=counts
+																																	href="DWM-LES_MLT_WP_Details.htm">MLT</A></TD>
+																																<TD align=center>12</TD>
+																															</TR>
+																															<TR>
+																																<TD><A class=counts
+																																	href="DWM-LES_Pair_Status_WP_Details.htm">Pair
+																																		Status</A></TD>
+																																<TD align=center>5</TD>
+																															</TR>
+																															<TR>
+																																<TD><A class=counts
+																																	href="Specials_Details.htm">Specials</A></TD>
+																																<TD align=center>3</TD>
+																															</TR>
+																															<TR>
+																																<TD><A class=counts
+																																	href="Expense_BPC_Details.htm">BPC</A></TD>
+																																<TD align=center>1</TD>
+																															</TR>
+
+																														</TBODY>
+																													</TABLE> <BR> <INPUT
+																													onmouseup="this.className='btn140'"
+																													class="btn140"
+																													onmouseover="this.className='btn140 btnhov'"
+																													onmouseout="this.className='btn140'"
+																													onmousedown="this.className='btn140 btndown'"
+																													name="target4"
+																													value="Reset Deleted Details" type="button" /><BR>
+																													<BR> <input name="button"
+																													type="submit" value="Duplicate Wkpkg"
+																													style="font-weight: bold;"
+																													onmouseup="this.className='btn140'"
+																													class="btn140"
+																													onmouseover="this.className='btn140 btnhov'"
+																													onmouseout="this.className='btn140'"
+																													onmousedown="this.className='btn140 btndown'" />
+
+																												</TD>
+																												<TD
+																													background=DWM-LES_Work_Package_files/side_right.gif
+																													align=center>&nbsp;</TD>
+																											</TR>
+
+
+																											<TR>
+																												<TD align=center><IMG
+																													src="DWM-LES_Work_Package_files/bottom_left.gif"
+																													width=15 height=15></TD>
+																													
+																												<TD
+																													background=DWM-LES_Work_Package_files/bottom.gif
+																													align=center>&nbsp;</TD>
+																												<TD align=center><IMG
+																													src="DWM-LES_Work_Package_files/bottom_right.gif"
+																													width=16 height=15></TD>
+																											</TR>
+																										</TBODY>
+																									</TABLE>
+																								</TD>
+																							</tr>
+																						</table> <!--<TABLE class=search border=0 cellSpacing=0 cellPadding=0>
+								<TBODY>
+								  <TR>
+									<TD width=15><IMG src="DWM-LES_Work_Package_files/top_left.gif" width=15 height=27></TD>
+									<TD vAlign=bottom background=DWM-LES_Work_Package_files/top.gif width=170 align=center></TD>
+									<TD width=16><IMG src="DWM-LES_Work_Package_files/top_right.gif" width=16 height=27></TD></TR>
+									<TR>
+									<TD background=DWM-LES_Work_Package_files/side_left.gif align=center>&nbsp;</TD>
+									<TD bgColor=#ffffff align=center>
+									<TABLE class=search border=0 cellSpacing=0 cellPadding=1 width=100>
+										<TBODY>									
+											
+											<TR>
+												<TD noWrap align=right>IRR $</TD>
+												<TD align=left><INPUT class=smalltext3 name=irr readOnly value=14 size=6></TD>
+											</TR>	
+										</TBODY>
+									</TABLE>
+									</TD>
+									<TD background=DWM-LES_Work_Package_files/side_right.gif align=center>&nbsp;</TD></TR>
+									<TR>
+									<TD align=center><IMG 
+									src="DWM-LES_Work_Package_files/bottom_left.gif" 
+									width=15 height=15></TD>
+									<TD 
+									background=DWM-LES_Work_Package_files/bottom.gif 
+									align=center>&nbsp;</TD>
+									<TD align=center><IMG 
+									src="DWM-LES_Work_Package_files/bottom_right.gif" 
+									width=16 
+									height=15></TD></TR>
+									</TBODY>
+								</TABLE>--> <!-- Table for TSI --> <!--<TABLE class=search border=0 cellSpacing=0 cellPadding=0>
+						<TBODY>
+						<TR>
+							<TD width=15><IMG src="DWM-LES_Work_Package_files/top_left.gif" width=15 height=27></TD>
+							<TD vAlign=bottom background=DWM-LES_Work_Package_files/top.gif width=171 align=center>TSI Counts</TD>
+							<TD width=16><IMG src="DWM-LES_Work_Package_files/top_right.gif" width=16 height=27></TD>
+						</TR>
+						<TR>
+							<TD background=DWM-LES_Work_Package_files/side_left.gif align=center>&nbsp;</TD>
+							<TD bgColor=#ffffff align=center>
+							<TABLE class=search border=0 cellSpacing=0 cellPadding=1 align="center">
+								<TBODY>
+									
+									<TR borderColor=#ffffff>
+										<TD noWrap align=right>&nbsp;</TD>
+										<TD>&nbsp;</TD>
+										<TD>&nbsp;</TD>
+									</TR>
+									<TR borderColor=#ffffff>
+										<TD noWrap align=right>ASKME :&nbsp; </TD>
+										<TD align=left><INPUT class=smalltext3 name=askme readOnly value=2 size=6> 							
+										<TD>&nbsp;</TD>
+									</TR>
+									<TR borderColor=#ffffff>
+										<TD noWrap align=right>Specials:&nbsp;</TD>
+										<TD align=left><INPUT class=smalltext3 name=askme readOnly value=4 size=6>
+										
+										<TD>&nbsp;</TD>
+									</TR>
+									
+									<TR borderColor=#ffffff>
+										<TD noWrap align=right>&nbsp;</TD>
+										<TD>&nbsp;</TD>
+										<TD>&nbsp;</TD>
+									</TR>
+								</TBODY>
+							</TABLE>
+							
+							</TD>						
+							<TD background=DWM-LES_Work_Package_files/side_right.gif align=center>&nbsp;</TD>
+						  </TR>
+						  <TR>
+							<TD align=center><IMG src="DWM-LES_Work_Package_files/bottom_left.gif" width=15 height=15></TD>
+							<TD	background=DWM-LES_Work_Package_files/bottom.gif align=center>&nbsp;</TD>
+							<TD align=center><IMG src="DWM-LES_Work_Package_files/bottom_right.gif" width=16 height=15></TD></TR>
+						</TBODY>
+					  </TABLE>--> <!--end Table for TSI -->
+																					</TD>
+
+
+																				</TR>
+																			</TBODY>
+																		</TABLE>
+																	</TD>
+																</TR>
+															</TBODY>
+														</TABLE>
+													</TD>
+												</TR>
+											</TBODY>
+										</TABLE>
+										<P class=copyright align=center>
+											<BR>Server Name: TRIUMPH<BR>- Copyright © 2005-2013
+											Fluke Corporation
+										</P>
+									</TD>
+								</TR>
+							</TBODY>
+						</TABLE>
+					</TD>
+				</TR>
+			</TBODY>
+		</TABLE>
+	</FORM>
+</BODY>
+</HTML>

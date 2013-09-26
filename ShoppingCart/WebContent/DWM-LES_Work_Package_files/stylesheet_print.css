@@ -1,0 +1,138 @@
+BODY {
+	BACKGROUND-COLOR: #ffffff; MARGIN: 0px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; COLOR: #000000
+}
+TABLE.entry {
+	PAGE-BREAK-INSIDE: avoid; FONT-FAMILY: Geneva, Arial, Helvetica, san-serif; COLOR: #000000; FONT-SIZE: 10px; FONT-WEIGHT: bold
+}
+THEAD {
+	DISPLAY: table-header-group; FONT-WEIGHT: lighter
+}
+TR {
+	PAGE-BREAK-INSIDE: avoid
+}
+TABLE.entryNoBold {
+	BORDER-BOTTOM-STYLE: solid; BORDER-BOTTOM-COLOR: #ffffff; BORDER-TOP-COLOR: #ffffff; BORDER-LEFT-STYLE: solid; FONT-FAMILY: Geneva, Arial, Helvetica, san-serif; BORDER-TOP-STYLE: solid; COLOR: #000000; BORDER-RIGHT-COLOR: #ffffff; BORDER-RIGHT-STYLE: solid; FONT-SIZE: 8px; OVERFLOW: auto; BORDER-LEFT-COLOR: #ffffff
+}
+TABLE.summary {
+	TEXT-ALIGN: center; FONT-FAMILY: Geneva, Arial, Helvetica, san-serif; FONT-SIZE: 10px
+}
+.style4 {
+	FONT-SIZE: 18px
+}
+.style7 {
+	FONT-SIZE: 12px
+}
+.style8 {
+	FONT-SIZE: 12px
+}
+A:link {
+	FONT-FAMILY: Geneva, Arial, Helvetica, san-serif; COLOR: #000000; FONT-SIZE: 10px; FONT-WEIGHT: bold
+}
+A:visited {
+	FONT-FAMILY: Geneva, Arial, Helvetica, san-serif; COLOR: #000000; FONT-SIZE: 10px; FONT-WEIGHT: bold
+}
+DIV#dwmLogo {
+	DISPLAY: none
+}
+DIV#fnetLogo {
+	DISPLAY: none
+}
+DIV#AdminPref {
+	DISPLAY: none
+}
+DIV#buttons {
+	DISPLAY: none
+}
+DIV#top {
+	DISPLAY: none
+}
+DIV#table {
+	DISPLAY: none
+}
+DIV#hideforPrint {
+	DISPLAY: none
+}
+P {
+	FONT-FAMILY: Geneva, Arial, Helvetica, san-serif
+}
+H1 {
+	FONT-SIZE: small; FONT-WEIGHT: bold
+}
+.summaryheader {
+	HEIGHT: 30px; COLOR: #000000; FONT-WEIGHT: bold
+}
+A.summaryheader:link {
+	COLOR: #000000
+}
+A.summaryheader:visited {
+	COLOR: #000000
+}
+A.summaryheader:hover {
+	COLOR: #000000
+}
+.graybar {
+	BACKGROUND-COLOR: #d6d6d6; HEIGHT: 25px
+}
+.whitebar {
+	BACKGROUND-COLOR: #ffffff; HEIGHT: 25px
+}
+.summaryheader2 {
+	BORDER-BOTTOM: #999999 thin solid; TEXT-ALIGN: center; BORDER-LEFT: #999999 thin solid; COLOR: #000000; BORDER-TOP: #999999 thin solid; FONT-WEIGHT: bold; BORDER-RIGHT: #999999 thin solid
+}
+.graybar2 {
+	BACKGROUND-COLOR: #d6d6d6
+}
+.whitebar2 {
+	BACKGROUND-COLOR: #ffffff
+}
+.headerlink:link {
+	FONT-FAMILY: Geneva, Arial, Helvetica, san-serif; COLOR: #000000; FONT-SIZE: 10px; FONT-WEIGHT: bold
+}
+.headerlink:visited {
+	FONT-FAMILY: Geneva, Arial, Helvetica, san-serif; COLOR: #000000; FONT-SIZE: 10px; FONT-WEIGHT: bold
+}
+INPUT.btn {
+	BORDER-BOTTOM: outset; BORDER-LEFT: outset; BACKGROUND-COLOR: #e8e8e8; WIDTH: 65px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; HEIGHT: 30px; COLOR: #000000; FONT-SIZE: 14px; BORDER-TOP: outset; BORDER-RIGHT: outset
+}
+INPUT.btnSmall {
+	BORDER-BOTTOM-STYLE: outset; TEXT-ALIGN: center; BACKGROUND-COLOR: #e8e8e8; BORDER-LEFT-STYLE: outset; WIDTH: 60px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: outset; HEIGHT: 25px; COLOR: #000000; BORDER-RIGHT-STYLE: outset; FONT-SIZE: 12px
+}
+INPUT.btnBold {
+	BORDER-BOTTOM: outset; BORDER-LEFT: outset; BACKGROUND-COLOR: #e8e8e8; WIDTH: 40px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; HEIGHT: 30px; COLOR: #000000; FONT-SIZE: 14px; BORDER-TOP: outset; FONT-WEIGHT: bold; BORDER-RIGHT: outset
+}
+INPUT.btnBigBold {
+	BORDER-BOTTOM: outset; BORDER-LEFT: outset; BACKGROUND-COLOR: #e8e8e8; WIDTH: 80px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; HEIGHT: 35px; COLOR: #000000; FONT-SIZE: 16px; BORDER-TOP: outset; FONT-WEIGHT: bold; BORDER-RIGHT: outset
+}
+INPUT.btnBig {
+	BORDER-BOTTOM: outset; BORDER-LEFT: outset; BACKGROUND-COLOR: #e8e8e8; WIDTH: 140px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; HEIGHT: 30px; COLOR: #000000; FONT-SIZE: 14px; BORDER-TOP: outset; BORDER-RIGHT: outset
+}
+INPUT.btn160 {
+	BORDER-BOTTOM-STYLE: outset; BACKGROUND-COLOR: #e8e8e8; BORDER-LEFT-STYLE: outset; WIDTH: 180px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: outset; HEIGHT: 25px; COLOR: #000000; BORDER-RIGHT-STYLE: outset; FONT-SIZE: 12px
+}
+INPUT.btn120 {
+	BORDER-BOTTOM: outset; BORDER-LEFT: outset; BACKGROUND-COLOR: #e8e8e8; WIDTH: 100px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; HEIGHT: 30px; COLOR: #000000; FONT-SIZE: 12px; BORDER-TOP: outset; BORDER-RIGHT: outset
+}
+INPUT.btnQ {
+	BORDER-BOTTOM-STYLE: outset; BACKGROUND-COLOR: #e8e8e8; BORDER-LEFT-STYLE: outset; WIDTH: 60px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: outset; HEIGHT: 25px; COLOR: #000000; BORDER-RIGHT-STYLE: outset; FONT-SIZE: 12px
+}
+INPUT.btn100 {
+	BORDER-BOTTOM-STYLE: outset; BACKGROUND-COLOR: #e8e8e8; BORDER-LEFT-STYLE: outset; WIDTH: 100px; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: outset; HEIGHT: 25px; COLOR: #000000; BORDER-RIGHT-STYLE: outset; FONT-SIZE: 12px
+}
+INPUT.btnhov {
+	BORDER-BOTTOM-COLOR: #930; BORDER-TOP-COLOR: #c63; BORDER-RIGHT-COLOR: #930; BORDER-LEFT-COLOR: #c63
+}
+INPUT.btndown {
+	BORDER-BOTTOM-STYLE: inset; BACKGROUND-COLOR: #b0b0b0; BORDER-LEFT-STYLE: inset; BORDER-TOP-STYLE: inset; BORDER-RIGHT-STYLE: inset
+}
+.width {
+	WIDTH: 130px; WHITE-SPACE: nowrap; OVERFLOW: auto
+}
+.bigtext {
+	FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; COLOR: #000000; FONT-SIZE: 22px
+}
+.smalltext {
+	BORDER-BOTTOM-STYLE: none; TEXT-ALIGN: right; BACKGROUND-COLOR: #ffffff; BORDER-LEFT-STYLE: none; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: none; COLOR: #000000; BORDER-RIGHT-STYLE: none; FONT-SIZE: 10px
+}
+.smalltotaltext {
+	BORDER-BOTTOM-STYLE: none; TEXT-ALIGN: right; BACKGROUND-COLOR: #ffffff; BORDER-LEFT-STYLE: none; FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif; BORDER-TOP-STYLE: none; COLOR: #000000; BORDER-RIGHT-STYLE: none; FONT-SIZE: 10px
+}
