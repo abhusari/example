@@ -1,4 +1,4 @@
 example
 =======
 
-Hav all the sample examples
+Have all the sample examples
